@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SantosPlugin"
 include(":app")
- 
+include(":SantosLoggerPlugin")
