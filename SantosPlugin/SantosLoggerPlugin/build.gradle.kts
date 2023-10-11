@@ -36,3 +36,10 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+
+tasks.register<Copy>("copyBuild")
+{
+    from("build/outputs/aar")
+    include(project.name + "-release.aar")
+    into("../../Assets/Plugins/Android")
+}
