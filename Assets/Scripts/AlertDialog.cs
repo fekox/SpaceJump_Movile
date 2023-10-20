@@ -39,7 +39,7 @@ public class AlertDialog : MonoBehaviour
     {
         Debug.Log("CreateAlert()");
 
-        pluginInstance.Call("CreateAlert");
+        pluginInstance.Call("CreateAlert", new AndroidPluginCallback());
     }
 
     public void ShowAlert()
@@ -49,4 +49,19 @@ public class AlertDialog : MonoBehaviour
         pluginInstance.Call("ShowAlert");
     }
 #endif
+}
+
+class AndroidPluginCallback : AndroidJavaProxy 
+{
+    public AndroidPluginCallback() : base("com.example.santosloggerplugin.AlertCallback") { }
+
+    public void onPositive(string message) 
+    {
+        Debug.Log("Clicked from Unity - " + message);
+    }
+
+    public void onNegative(string message) 
+    {
+        Debug.Log("Clicked from Unity - " + message);
+    }
 }

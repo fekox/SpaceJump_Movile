@@ -36,7 +36,7 @@ public class SantosLogger
         unityActivity = activity;
     }
 
-    public void CreateAlert()
+    public void CreateAlert(AlertCallback alertCallback)
     {
         builder = new AlertDialog.Builder(unityActivity);
         builder.setMessage("Sell your soul?");
@@ -47,6 +47,7 @@ public class SantosLogger
             public void onClick(DialogInterface dialogInterface, int i)
             {
                 Log.v(LOGTAG, "Clicked from plugin - Yes");
+                alertCallback.onPositive("Clicked Yes");
                 dialogInterface.cancel();
             }
         });
@@ -57,6 +58,7 @@ public class SantosLogger
             public void onClick(DialogInterface dialogInterface, int i)
             {
                 Log.v(LOGTAG, "Clicked from plugin - No");
+                alertCallback.onNegative("Clicked No");
                 dialogInterface.cancel();
             }
         });
