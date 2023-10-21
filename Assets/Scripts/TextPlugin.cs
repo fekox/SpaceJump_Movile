@@ -31,7 +31,7 @@ public class TextPlugin : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            plugin.text = _pluginInstance.Call<string>("getLogtag");
+            plugin.text = _pluginInstance.Call<string>("getLogtag", new AndroidPluginCallback());
         }
     }
 #endif

@@ -14,8 +14,6 @@ public class SantosLogger
 
     static SantosLogger _instance = null;
 
-
-
     public static SantosLogger getInstance()
     {
         if (_instance == null)
@@ -26,8 +24,12 @@ public class SantosLogger
         return _instance;
     }
 
-    public String getLogtag()
+    public String getLogtag(AlertCallback alertCallback)
     {
+        Log.v(LOGTAG, "Get from plugin");
+        Log.e(LOGTAG, "Error test");
+        alertCallback.onRunPlugin(LOGTAG);
+        alertCallback.onError(LOGTAG);
         return LOGTAG;
     }
 
