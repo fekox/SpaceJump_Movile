@@ -3,10 +3,19 @@ package com.example.santosloggerplugin;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.os.Environment;
 import android.util.Log;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SantosLogger
 {
+    List<String> logList = new ArrayList<String>();
     private static Activity unityActivity;
     AlertDialog.Builder builder;
 
@@ -26,7 +35,10 @@ public class SantosLogger
 
     public String getLogtag(AlertCallback alertCallback)
     {
+        logList.add("SantosLog Get from plugin");
         Log.v(LOGTAG, "Get from plugin");
+
+        logList.add("SantosLog Error test");
         Log.e(LOGTAG, "Error test");
         alertCallback.onRunPlugin(LOGTAG);
         alertCallback.onError(LOGTAG);
@@ -48,6 +60,7 @@ public class SantosLogger
             @Override
             public void onClick(DialogInterface dialogInterface, int i)
             {
+                logList.add("Clicked from plugin - Yes");
                 Log.v(LOGTAG, "Clicked from plugin - Yes");
                 alertCallback.onPositive("Clicked Yes");
                 dialogInterface.cancel();
@@ -59,6 +72,7 @@ public class SantosLogger
             @Override
             public void onClick(DialogInterface dialogInterface, int i)
             {
+                logList.add("Clicked from plugin - No");
                 Log.v(LOGTAG, "Clicked from plugin - No");
                 alertCallback.onNegative("Clicked No");
                 dialogInterface.cancel();
@@ -70,5 +84,27 @@ public class SantosLogger
     {
         AlertDialog alert = builder.create();
         builder.show();
+    }
+
+    private void SaveLogsToFile()
+    {
+        File logFile = new File(Environment.getExternalStorageDirectory(), "Logs_File.txt");
+
+        try
+        {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
+
+            for (String log : logList)
+            {
+                writer.write(log);
+                writer.newLine();
+            }
+
+            writer.close();
+
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
