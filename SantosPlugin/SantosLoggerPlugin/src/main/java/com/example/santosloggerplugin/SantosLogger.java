@@ -38,10 +38,7 @@ public class SantosLogger
         logList.add("SantosLog Get from plugin");
         Log.v(LOGTAG, "Get from plugin");
 
-        logList.add("SantosLog Error test");
-        Log.e(LOGTAG, "Error test");
         alertCallback.onRunPlugin(LOGTAG);
-        alertCallback.onError(LOGTAG);
         return LOGTAG;
     }
 

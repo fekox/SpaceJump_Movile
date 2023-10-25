@@ -69,9 +69,4 @@ class AndroidPluginCallback : AndroidJavaProxy
     {
         Debug.Log("Get from Unity - " + message);
     }
-
-    public void onError(string message) 
-    {
-        Debug.LogError("Get error from Unity - " + message);
-    }
 }
