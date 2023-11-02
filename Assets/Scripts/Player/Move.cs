@@ -15,7 +15,6 @@ public class Move : MonoBehaviour
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration;
-    [SerializeField] private float desacceleration;
 
     private void Start()
     {
@@ -35,11 +34,6 @@ public class Move : MonoBehaviour
         if(Mathf.Abs(rb.velocity.y) > 0) 
         {
             currentSpeed += acceleration;
-        }
-
-        else 
-        {
-            currentSpeed -= desacceleration;
         }
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
     }

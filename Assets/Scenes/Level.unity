@@ -461,7 +461,6 @@ MonoBehaviour:
     m_Bits: 64
   isGrounded: 0
   jumpForce: 400
-  move: {fileID: 459613597}
 --- !u!61 &459613595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -536,8 +535,7 @@ MonoBehaviour:
   speed: 1
   maxSpeed: 2
   currentSpeed: 0
-  acceleration: 0.1
-  desacceleration: 6
+  acceleration: 0.001
 --- !u!1 &468185350
 GameObject:
   m_ObjectHideFlags: 0

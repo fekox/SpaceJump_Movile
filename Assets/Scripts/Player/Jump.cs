@@ -12,14 +12,10 @@ public class Jump : MonoBehaviour
 
     public float jumpForce;
 
-    [Header("Move")]
-    [SerializeField] private Move move;
-
     public void StartJump() 
     {
         if (isGrounded) 
         {
-            move.ResetSpeed();
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
     }
