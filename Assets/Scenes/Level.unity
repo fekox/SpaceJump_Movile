@@ -460,7 +460,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
-  jumpForce: 100
+  jumpForce: 400
 --- !u!61 &459613595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,10 +532,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa03e0b08ceac5a45944d299177225f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  maxSpeed: 2
+  speed: 10
+  maxSpeed: 20
   currentSpeed: 0
-  acceleration: 0.001
+  acceleration: 1
 --- !u!1 &468185350
 GameObject:
   m_ObjectHideFlags: 0
