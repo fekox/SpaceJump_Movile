@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     {
         if (isGrounded) 
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            rb.AddForce(new Vector2(0, jumpForce));
         }
     }
 

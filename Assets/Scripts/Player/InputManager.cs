@@ -11,16 +11,17 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        move.CheckMousePos();
         jump.CheckIsGrounded();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetMouseButton(0))
         {
-           jump.StartJump();
+            jump.StartJump();
         }
 
-        if (!jump.isGrounded) 
+        if (Input.GetMouseButton(0) && !jump.isGrounded)
         {
-            move.StartMove();
+            move.StartMoveTouch();
         }
 
         if (jump.isGrounded) 

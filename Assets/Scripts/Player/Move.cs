@@ -10,8 +10,9 @@ public class Move : MonoBehaviour
     [SerializeField] float maxSpeed = 2;
     [SerializeField] private float currentSpeed;
 
+    private Vector3 mousePos;
+
     private Rigidbody2D rb;
-    private float moveDirection;
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration;
@@ -22,11 +23,24 @@ public class Move : MonoBehaviour
         currentSpeed = speed;
     }
 
-    public void StartMove() 
+    public void CheckMousePos() 
     {
-        moveDirection = Input.GetAxis("Horizontal");
-        rb.AddForce(new Vector2(moveDirection * currentSpeed, 0), ForceMode2D.Force);
-        CalculeteSpeed();
+        mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+    }
+
+    public void StartMoveTouch() 
+    {
+        if (mousePos.x > 0.5)
+        {
+            rb.AddForce(new Vector2(currentSpeed, 0), ForceMode2D.Force);
+            CalculeteSpeed();
+        }
+
+        if (mousePos.x < 0.5)
+        {
+            rb.AddForce(new Vector2(-currentSpeed, 0), ForceMode2D.Force);
+            CalculeteSpeed();
+        }
     }
 
     private void CalculeteSpeed() 
@@ -35,6 +49,7 @@ public class Move : MonoBehaviour
         {
             currentSpeed += acceleration;
         }
+
         currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
     }
 
