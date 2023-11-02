@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    [Header("Jump")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    private bool isGrounded;
+    public bool isGrounded;
 
     public float jumpForce;
 
+    [Header("Move")]
+    [SerializeField] private Move move;
+
     public void StartJump() 
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-
         if (isGrounded) 
         {
+            move.ResetSpeed();
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
+    }
+
+    public void CheckIsGrounded() 
+    {
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 }
