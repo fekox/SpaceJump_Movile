@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : MonoBehaviour
+public class PlayerJump : MonoBehaviour
 {
     [Header("Jump")]
     [SerializeField] private Rigidbody2D rb;
@@ -22,6 +22,6 @@ public class Jump : MonoBehaviour
 
     public void CheckIsGrounded() 
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.5f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 }

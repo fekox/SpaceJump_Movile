@@ -5,9 +5,9 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [Header("Jump")]
-    [SerializeField] private Jump jump;
+    [SerializeField] private PlayerJump jump;
     [Header("Move")]
-    [SerializeField] private Move move;
+    [SerializeField] private PlayerMove move;
 
     void Update()
     {

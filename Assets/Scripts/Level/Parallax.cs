@@ -26,8 +26,8 @@ public class Parallax : MonoBehaviour
 
     private void Scroll() 
     {
-        float delta = moveSpeed * Time.deltaTime;
-        transform.position += new Vector3(delta, 0f, 0f);
+        float speedX = moveSpeed * Time.deltaTime;
+        transform.position += new Vector3(speedX, 0f, 0f);
     }
 
     private void CheckReset() 
