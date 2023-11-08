@@ -385,13 +385,14 @@ GameObject:
   - component: {fileID: 459613592}
   - component: {fileID: 459613591}
   - component: {fileID: 459613597}
+  - component: {fileID: 459613598}
   - component: {fileID: 459613594}
   - component: {fileID: 459613596}
   - component: {fileID: 459613593}
   - component: {fileID: 459613595}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,10 +582,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa03e0b08ceac5a45944d299177225f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   maxSpeed: 10
   currentSpeed: 0
+  speed: 5
   acceleration: 1
+--- !u!114 &459613598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459613590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ed8c3277d2b741ba1ae62dfe30df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMove: {fileID: 459613597}
+  playerJump: {fileID: 459613594}
+  platformMovement: {fileID: 468185354}
+  rb: {fileID: 459613593}
 --- !u!1 &468185350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6801384054138954203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
@@ -1345,6 +1362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197282174}
   - component: {fileID: 1197282175}
+  - component: {fileID: 1197282176}
   m_Layer: 0
   m_Name: LimitColliderDown
   m_TagString: Untagged
@@ -1412,6 +1430,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 25, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1197282176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197282173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e925af0d443fb42baa4329f5337b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTagName: Player
 --- !u!1 &1211771433
 GameObject:
   m_ObjectHideFlags: 0

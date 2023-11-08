@@ -6,13 +6,14 @@ public class PlayerMove : MonoBehaviour
 {
     [Header("Move")]
 
-    [SerializeField] private float speed;
     [SerializeField] float maxSpeed = 2;
     [SerializeField] private float currentSpeed;
 
     private Vector3 mousePos;
 
     private Rigidbody2D rb;
+
+    public float speed;
 
     [Header("Acceleration")]
     [SerializeField] private float acceleration;
