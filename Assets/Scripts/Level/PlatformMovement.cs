@@ -29,7 +29,7 @@ public class PlatformMovement : MonoBehaviour
 
     public void SetPlatformXPosition(float posX) 
     {
-        float posY = -4.5f;
+        float posY = -4.9f;
         transform.position = new Vector3(posX, posY, 0f);
     }
     

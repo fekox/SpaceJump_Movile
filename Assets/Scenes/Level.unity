@@ -179,6 +179,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 775889362}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformXPos
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformCollider
+      value: 
+      objectReference: {fileID: 1872063403}
     - target: {fileID: 6801384054138954203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: m_Name
       value: Platform (3)
@@ -980,6 +996,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 775889362}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformXPos
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformCollider
+      value: 
+      objectReference: {fileID: 1872063403}
     - target: {fileID: 6801384054138954203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: m_Name
       value: Platform (4)
@@ -1050,6 +1082,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 775889362}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformXPos
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: platformCollider
+      value: 
+      objectReference: {fileID: 1872063403}
     - target: {fileID: 6801384054138954203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: m_Name
       value: Platform
