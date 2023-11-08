@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("Move")]
+    [Header("Setup")]
 
-    [SerializeField] float maxSpeed = 2;
-    [SerializeField] private float currentSpeed;
+    [SerializeField] private float speed;
+
+    private float currenSpeed = 0;
 
     private Vector3 mousePos;
 
     private Rigidbody2D rb;
 
-    public float speed;
-
-    [Header("Acceleration")]
-    [SerializeField] private float acceleration;
+    [Header("References")]
+    [SerializeField] private PlatformMovement platformMovement;
+    [SerializeField] private PlayerJump jump;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentSpeed = speed;
+        currenSpeed = speed; 
+    }
+
+    private void Update()
+    {
+        CorrectPlayerSpeed();
     }
 
     public void CheckMousePos() 
@@ -33,29 +39,26 @@ public class PlayerMove : MonoBehaviour
     {
         if (mousePos.x > 0.5)
         {
-            rb.AddForce(new Vector2(currentSpeed, 0), ForceMode2D.Force);
-            CalculeteSpeed();
+            rb.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
         }
 
         if (mousePos.x < 0.5)
         {
-            rb.AddForce(new Vector2(-currentSpeed, 0), ForceMode2D.Force);
-            CalculeteSpeed();
+            rb.AddForce(new Vector2(-speed, 0), ForceMode2D.Force);
         }
     }
 
-    private void CalculeteSpeed() 
+    public void CorrectPlayerSpeed() 
     {
-        if(Mathf.Abs(rb.velocity.y) > 0) 
+        if(jump.isGrounded)
         {
-            currentSpeed += acceleration;
+            speed = 0;
+            rb.AddForce(new Vector2(-0.8f, 0), ForceMode2D.Force);
         }
 
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
-    }
-
-    public void ResetSpeed() 
-    {
-        currentSpeed = speed;
+        else 
+        {
+            speed = currenSpeed;
+        }
     }
 }

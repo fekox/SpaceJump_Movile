@@ -23,10 +23,5 @@ public class InputManager : MonoBehaviour
         {
             move.StartMoveTouch();
         }
-
-        if (jump.isGrounded) 
-        {
-            move.ResetSpeed();
-        }
     }
 }
