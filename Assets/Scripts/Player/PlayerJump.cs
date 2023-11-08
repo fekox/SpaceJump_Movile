@@ -22,6 +22,6 @@ public class PlayerJump : MonoBehaviour
 
     public void CheckIsGrounded() 
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.5f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.6f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 }
