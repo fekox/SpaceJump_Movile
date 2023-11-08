@@ -374,9 +374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 775889362}
   platformMovement:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1018655000}
+  - {fileID: 885738718}
+  - {fileID: 1740953755}
 --- !u!4 &377569193
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,6 +1026,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4271414755820784116, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
   m_PrefabInstance: {fileID: 830484270}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &885738718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+  m_PrefabInstance: {fileID: 2706855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce778a730c2e59a48beb605c7053557a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1018654998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1112,6 +1123,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4271414755820784116, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
   m_PrefabInstance: {fileID: 1018654998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1018655000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+  m_PrefabInstance: {fileID: 1018654998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce778a730c2e59a48beb605c7053557a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1043606130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129880445}
+  - component: {fileID: 1129880446}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1318,6 +1341,19 @@ Transform:
   - {fileID: 1872063404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129880446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129880444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ef0e2016cce1b438e04a05546c7b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: LoseMenu
 --- !u!1 &1152434215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTagName: Player
+  loadLevel: {fileID: 1129880446}
 --- !u!1 &1211771433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2098,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511651426}
   m_CullTransparentMesh: 1
+--- !u!114 &1740953755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+  m_PrefabInstance: {fileID: 830484270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce778a730c2e59a48beb605c7053557a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872063403
 GameObject:
   m_ObjectHideFlags: 0
