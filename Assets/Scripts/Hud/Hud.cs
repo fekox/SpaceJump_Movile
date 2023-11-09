@@ -7,6 +7,10 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Hud : MonoBehaviour
 {
     [Header("Setup")]
+    [SerializeField] private string scorePlayerPref;
+
+    private int saveScore = 0;
+
     public int platformCounter = 0;
 
     [Header("References")]
@@ -20,10 +24,18 @@ public class Hud : MonoBehaviour
     private void Update()
     {
         ShowScore();
+        UpdateHightScore();
     }
 
     private void ShowScore()
     {
         score.text = platformCounter.ToString();
+    }
+
+    private void UpdateHightScore() 
+    {
+        saveScore = platformCounter;
+
+        PlayerPrefs.SetInt(scorePlayerPref, saveScore);
     }
 }
