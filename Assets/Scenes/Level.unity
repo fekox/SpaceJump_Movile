@@ -377,6 +377,7 @@ MonoBehaviour:
   - {fileID: 1018655000}
   - {fileID: 885738718}
   - {fileID: 1740953755}
+  maxPlatformsToIncreastDificult: 5
 --- !u!4 &377569193
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class GameManger : MonoBehaviour
     [SerializeField] private PlatformMovement[] platformMovement;
     private bool canAumentSpeed = false;
 
+    public int maxPlatformsToIncreastDificult;
+
+
+
     void Update()
     {
         ClimbDificult();
@@ -16,7 +20,7 @@ public class GameManger : MonoBehaviour
 
     private void ClimbDificult()
     {
-        if (hud.platformCounter % 5 == 0 && !canAumentSpeed)
+        if (hud.platformCounter % maxPlatformsToIncreastDificult == 0 && !canAumentSpeed)
         {
             for (int i = 0; i < platformMovement.Length; i++) 
             {
