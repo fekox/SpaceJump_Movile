@@ -2452,6 +2452,22 @@ PrefabInstance:
       propertyPath: loadLevel
       value: 
       objectReference: {fileID: 1129880446}
+    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87b377d2e26f3464a9559d331aa0eb56, type: 3}
+    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8040471492551211220, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: m_Name
       value: Asteroid
