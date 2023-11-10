@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    [Header("Random Platform Position Y")]
+    [SerializeField] float minPlatformPositionY;
+    [SerializeField] float maxPlatformPositionY;
+
     [Header("Setup")]
+    private float platformPosY;
+    public float platformPosX;
     public float moveSpeed;
-    public float platformXPos;
 
     [Header("Refernces")]
     [SerializeField] private Hud hud;
@@ -27,17 +32,17 @@ public class PlatformMovement : MonoBehaviour
         transform.position += new Vector3(-speedX, 0f, 0f);
     }
 
-    public void SetPlatformXPosition(float posX) 
+    public void SetPlatformPosition(float posX) 
     {
-        float posY = -4.9f;
-        transform.position = new Vector3(posX, posY, 0f);
+        platformPosY = Random.Range(minPlatformPositionY, maxPlatformPositionY);
+        transform.position = new Vector3(posX, (int)platformPosY, 0f);
     }
     
     private void RepositionPlatform() 
     {
         if (transform.position.x <= platformCollider.transform.position.x)
         {
-            SetPlatformXPosition(platformXPos);
+            SetPlatformPosition(platformPosX);
             hud.platformCounter++;
         }
     }   

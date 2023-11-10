@@ -7,32 +7,45 @@ public class GameManger : MonoBehaviour
     [Header("Refernces")]
     [SerializeField] private Hud hud;
     [SerializeField] private PlatformMovement[] platformMovement;
-    private bool canAumentSpeed = false;
+    [SerializeField] private AsteroidMovement asteroidMovement;
 
-    public int maxPlatformsToIncreastDificult;
-
-
+    [Header("Setup")]
+    private bool canAumentPlatformSpeed = false;
+    public int maxScoreToIncreastDificult;
+    public int newAsteroidSpeed;
 
     void Update()
     {
-        ClimbDificult();
+        IncreaseGameSpeed();
     }
 
-    private void ClimbDificult()
+    private void IncreaseGameSpeed() 
     {
-        if (hud.platformCounter % maxPlatformsToIncreastDificult == 0 && !canAumentSpeed)
+        if (hud.platformCounter % maxScoreToIncreastDificult == 0 && !canAumentPlatformSpeed)
         {
-            for (int i = 0; i < platformMovement.Length; i++) 
-            {
-                platformMovement[i].moveSpeed += 1;
-            }
+            IncreasePlatformsSpeed();
+            IncreaseAsteroidSpeed();
 
-            canAumentSpeed = true;
+            canAumentPlatformSpeed = true;
         }
 
-        if(hud.platformCounter % 5 != 0 && canAumentSpeed)
+        if (hud.platformCounter % maxScoreToIncreastDificult != 0 && canAumentPlatformSpeed)
         {
-            canAumentSpeed = false;
+            canAumentPlatformSpeed = false;
         }
+    }
+
+    private void IncreasePlatformsSpeed() 
+    {
+        for (int i = 0; i < platformMovement.Length; i++)
+        {
+            platformMovement[i].moveSpeed += 1;
+        }
+    }
+
+    private void IncreaseAsteroidSpeed()
+    {
+        asteroidMovement.moveSpeed += 1;
+        asteroidMovement.asteroidXPos += newAsteroidSpeed;
     }
 }
