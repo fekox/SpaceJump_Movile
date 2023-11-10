@@ -50,3 +50,6 @@ TagManager:
   - name: Player
     uniqueID: 1656743847
     locked: 0
+  - name: Asteroid
+    uniqueID: 1708324231
+    locked: 0
