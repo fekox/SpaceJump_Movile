@@ -381,7 +381,7 @@ MonoBehaviour:
   - {fileID: 1018655000}
   - {fileID: 885738718}
   - {fileID: 1740953755}
-  asteroidMovement: {fileID: 2077974551}
+  asteroidMovement: {fileID: 3407495751722496546}
   maxScoreToIncreastDificult: 5
   newAsteroidSpeed: 20
 --- !u!4 &377569193
@@ -2389,17 +2389,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2077974551 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8766400990670630575, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-  m_PrefabInstance: {fileID: 3407495751722496545}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60e555745f55c244929be0f3bdf7085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3407495751722496545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2426,7 +2415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421513686936874391, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 421513686936874391, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2448,30 +2437,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3318249928210683847, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-      propertyPath: loadLevel
-      value: 
-      objectReference: {fileID: 1129880446}
-    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 87b377d2e26f3464a9559d331aa0eb56, type: 3}
-    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5617877885061991065, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8040471492551211220, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 8513426634695121599, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: loadLevel
+      value: 
+      objectReference: {fileID: 1129880446}
     - target: {fileID: 8766400990670630575, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: asteroidLimitCollider
       value: 
@@ -2481,6 +2454,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+--- !u!114 &3407495751722496546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8766400990670630575, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+  m_PrefabInstance: {fileID: 3407495751722496545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60e555745f55c244929be0f3bdf7085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
