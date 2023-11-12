@@ -3,22 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuButtons : MonoBehaviour
+public class ShopMenuButtons : MonoBehaviour
 {
     [SerializeField] private string[] sceneName;
 
-    public void PlayGame()
+    public void ReturnMenu()
     {
         SceneManager.LoadScene(sceneName[0]);
-    }
-
-    public void GoToShop()
-    {
-        SceneManager.LoadScene(sceneName[1]);
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 }
