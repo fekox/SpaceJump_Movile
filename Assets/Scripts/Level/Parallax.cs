@@ -7,6 +7,8 @@ public class Parallax : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private bool scrollLeft;
 
+    [SerializeField] private bool isNotTheLevelScene;
+
     private float textureWidth;
     void Start()
     {
@@ -15,6 +17,15 @@ public class Parallax : MonoBehaviour
         if (scrollLeft) 
         {
             moveSpeed = -moveSpeed;
+        }
+    }
+
+    private void Update()
+    {
+        if (isNotTheLevelScene) 
+        {
+            Scroll();
+            CheckReset();
         }
     }
 

@@ -564,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   scrollLeft: 1
+  isNotTheLevelScene: 1
 --- !u!1 &850764808
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   scrollLeft: 1
+  isNotTheLevelScene: 1
 --- !u!1 &1219392150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   scrollLeft: 1
+  isNotTheLevelScene: 1
 --- !u!1 &1420042287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   scrollLeft: 1
+  isNotTheLevelScene: 1
 --- !u!1 &1465946736
 GameObject:
   m_ObjectHideFlags: 0

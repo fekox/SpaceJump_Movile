@@ -998,7 +998,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
-  jumpForce: 500
+  jumpForce: 200
 --- !u!61 &459613595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  platformMovement: {fileID: 0}
   jump: {fileID: 459613594}
 --- !u!1 &474053550
 GameObject:

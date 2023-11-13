@@ -16,7 +16,6 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb;
 
     [Header("References")]
-    [SerializeField] private PlatformMovement platformMovement;
     [SerializeField] private PlayerJump jump;
 
     private void Start()
