@@ -777,9 +777,10 @@ MonoBehaviour:
   - {fileID: 1179727093}
   - {fileID: 1221614862}
   - {fileID: 1420042290}
+  playerPrefKey: ActiveTutorial
   maxScoreToIncreastDificult: 5
   newAsteroidSpeed: 20
-  pauseGame: 1
+  pauseGame: 0
 --- !u!4 &377569193
 Transform:
   m_ObjectHideFlags: 0

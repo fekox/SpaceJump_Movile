@@ -24,15 +24,22 @@ public class GameManger : MonoBehaviour
 
     [Header("Setup")]
     private bool canAumentPlatformSpeed = false;
+    
+    public string playerPrefKey = "ActiveTutorial";
     public int maxScoreToIncreastDificult;
     public int newAsteroidSpeed;
 
-    public bool pauseGame = true;
+    public bool pauseGame = false;
+
+
 
     void Update()
     {
-        tutorialManager.AddTaps(1);
-        tutorialManager.CheckTaps();
+        if (!PlayerPrefs.HasKey(playerPrefKey)) 
+        {
+            tutorialManager.AddTaps(1);
+            tutorialManager.CheckTaps();
+        }
 
         if (pauseGame == false) 
         {

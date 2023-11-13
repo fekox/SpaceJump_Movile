@@ -35,6 +35,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (taps == 0) 
         {
+            gameManager.pauseGame = true;
             tutorialPopUp.SetActive(true);
             firstTap.SetActive(true);
             secondTap.SetActive(false);
@@ -56,6 +57,7 @@ public class TutorialManager : MonoBehaviour
             firstTap.SetActive(false);
             secondTap.SetActive(false);
             gameManager.pauseGame = false;
+            PlayerPrefs.SetInt(gameManager.playerPrefKey, 1);
         }
     }
 
