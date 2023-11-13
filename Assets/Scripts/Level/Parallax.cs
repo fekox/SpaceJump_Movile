@@ -24,23 +24,17 @@ public class Parallax : MonoBehaviour
         textureWidth = sprite.texture.width / sprite.pixelsPerUnit;
     }
 
-    private void Scroll() 
+    public void Scroll() 
     {
         float speedX = moveSpeed * Time.deltaTime;
         transform.position += new Vector3(speedX, 0f, 0f);
     }
 
-    private void CheckReset() 
+    public void CheckReset() 
     {
         if ((Mathf.Abs(transform.position.x) - textureWidth) > 0) 
         {
             transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
         }
-    }
-
-    void Update()
-    {
-        Scroll();
-        CheckReset();
     }
 }

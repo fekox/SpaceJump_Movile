@@ -15,18 +15,11 @@ public class PlatformMovement : MonoBehaviour
     public float moveSpeed;
 
     [Header("Refernces")]
-    [SerializeField] private Hud hud;
+    [SerializeField] private ScoreManager scoreManager;
     
     public GameObject platformCollider;
 
-
-    void Update()
-    {
-        PlatformMove();
-        RepositionPlatform();
-    }
-
-    private void PlatformMove() 
+    public void PlatformMove() 
     {
         float speedX = moveSpeed * Time.deltaTime;
         transform.position += new Vector3(-speedX, 0f, 0f);
@@ -38,12 +31,12 @@ public class PlatformMovement : MonoBehaviour
         transform.position = new Vector3(posX, (int)platformPosY, 0f);
     }
     
-    private void RepositionPlatform() 
+    public void RepositionPlatform() 
     {
         if (transform.position.x <= platformCollider.transform.position.x)
         {
             SetPlatformPosition(platformPosX);
-            hud.platformCounter++;
+            scoreManager.platformCounter++;
         }
     }   
 }

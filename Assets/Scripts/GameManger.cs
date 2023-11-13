@@ -5,23 +5,64 @@ using UnityEngine;
 public class GameManger : MonoBehaviour
 {
     [Header("Refernces")]
-    [SerializeField] private Hud hud;
+    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private TutorialManager tutorialManager;
+
+    [Header("Player")]
+    [SerializeField] private PlayerMove playerMove;
+    [SerializeField] private PlayerJump playerJump;
+    [SerializeField] private InputManager inputManager;
+
+    [Header("Platform Movement")]
     [SerializeField] private PlatformMovement[] platformMovement;
+
+    [Header("Asteroid")]
     [SerializeField] private AsteroidMovement asteroidMovement;
+
+    [Header("Parallax")]
+    [SerializeField] private Parallax[] parallax;
 
     [Header("Setup")]
     private bool canAumentPlatformSpeed = false;
     public int maxScoreToIncreastDificult;
     public int newAsteroidSpeed;
 
+    public bool pauseGame = true;
+
     void Update()
     {
-        IncreaseGameSpeed();
+        tutorialManager.AddTaps(1);
+        tutorialManager.CheckTaps();
+
+        if (pauseGame == false) 
+        {
+            inputManager.CheckInputs();
+            playerMove.CorrectPlayerSpeed();
+            playerMove.CheckMousePos();
+            playerJump.CheckIsGrounded();
+
+            IncreaseGameSpeed();
+
+            for (int i = 0; i < platformMovement.Length; i++)
+            {
+                platformMovement[i].PlatformMove();
+                platformMovement[i].RepositionPlatform();
+            }
+
+            asteroidMovement.AsteroidMove();
+            asteroidMovement.RepositionAsteroid();
+
+            for (int i = 0; i < parallax.Length; i++)
+            {
+                parallax[i].Scroll();
+                parallax[i].CheckReset();
+            }
+        }
     }
 
     private void IncreaseGameSpeed() 
     {
-        if (hud.platformCounter % maxScoreToIncreastDificult == 0 && !canAumentPlatformSpeed)
+        if (scoreManager.platformCounter % maxScoreToIncreastDificult == 0 && !canAumentPlatformSpeed)
         {
             IncreasePlatformsSpeed();
             IncreaseAsteroidSpeed();
@@ -29,7 +70,7 @@ public class GameManger : MonoBehaviour
             canAumentPlatformSpeed = true;
         }
 
-        if (hud.platformCounter % maxScoreToIncreastDificult != 0 && canAumentPlatformSpeed)
+        if (scoreManager.platformCounter % maxScoreToIncreastDificult != 0 && canAumentPlatformSpeed)
         {
             canAumentPlatformSpeed = false;
         }

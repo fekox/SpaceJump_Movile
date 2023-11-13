@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
-public class Hud : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] private string scorePlayerPref;
@@ -32,7 +31,7 @@ public class Hud : MonoBehaviour
         score.text = platformCounter.ToString();
     }
 
-    private void UpdateHightScore() 
+    private void UpdateHightScore()
     {
         saveScore = platformCounter;
 

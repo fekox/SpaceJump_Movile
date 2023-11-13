@@ -9,11 +9,8 @@ public class InputManager : MonoBehaviour
     [Header("Move")]
     [SerializeField] private PlayerMove move;
 
-    void Update()
+    public void CheckInputs() 
     {
-        move.CheckMousePos();
-        jump.CheckIsGrounded();
-
         if (Input.GetMouseButton(0))
         {
             jump.StartJump();

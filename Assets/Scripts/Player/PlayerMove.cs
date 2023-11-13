@@ -25,11 +25,6 @@ public class PlayerMove : MonoBehaviour
         currenSpeed = speed; 
     }
 
-    private void Update()
-    {
-        CorrectPlayerSpeed();
-    }
-
     public void CheckMousePos() 
     {
         mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);

@@ -12,14 +12,7 @@ public class AsteroidMovement : MonoBehaviour
 
     public GameObject asteroidLimitCollider;
 
-
-    void Update()
-    {
-        AsteroidMove();
-        RepositionPlatform();
-    }
-
-    private void AsteroidMove()
+    public void AsteroidMove()
     {
         float speedX = moveSpeed * Time.deltaTime;
         transform.position += new Vector3(-speedX, 0f, 0f);
@@ -31,7 +24,7 @@ public class AsteroidMovement : MonoBehaviour
         transform.position = new Vector3(posX, posY, 0f);
     }
 
-    private void RepositionPlatform()
+    public void RepositionAsteroid()
     {
         if (transform.position.x <= asteroidLimitCollider.transform.position.x)
         {
