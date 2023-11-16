@@ -17,6 +17,16 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene(sceneName[1]);
     }
 
+    public void GoToCredits() 
+    {
+        SceneManager.LoadScene(sceneName[2]);
+    }
+
+    public void GoToCPlugin()
+    {
+        SceneManager.LoadScene(sceneName[3]);
+    }
+
     public void ExitGame()
     {
         PlayerPrefs.DeleteAll();
