@@ -15,7 +15,21 @@ public class DeadZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
+            VibrateCellPhone();
             loadLevel.LoadScene();
+        }
+    }
+
+    private void VibrateCellPhone() 
+    {
+        if (SystemInfo.supportsVibration)
+        {
+            Handheld.Vibrate();
+        }
+
+        else
+        {
+            Debug.LogWarning("Vibrate Failed");
         }
     }
 }

@@ -635,7 +635,7 @@ MonoBehaviour:
   firstTap: {fileID: 174604262}
   secondTap: {fileID: 869690500}
   gameManager: {fileID: 377569192}
-  maxTime: 3
+  maxTime: 2
 --- !u!1 &351520263
 GameObject:
   m_ObjectHideFlags: 0
