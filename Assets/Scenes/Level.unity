@@ -1181,8 +1181,8 @@ GameObject:
   m_Component:
   - component: {fileID: 698875832}
   - component: {fileID: 698875835}
-  - component: {fileID: 698875834}
   - component: {fileID: 698875833}
+  - component: {fileID: 698875836}
   m_Layer: 0
   m_Name: PlayerSkin(Ninja_Frog)
   m_TagString: Untagged
@@ -1217,30 +1217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfa15985f96bce45bcc56c534385242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 698875834}
+  animator: {fileID: 698875836}
   playerMove: {fileID: 459613597}
   playerJump: {fileID: 459613594}
---- !u!95 &698875834
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698875831}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 748cdd7b1518f4342b8d71b13e656045, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &698875835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1293,6 +1272,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &698875836
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698875831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 495c7989314556b46b9d9a4b95f03e59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &718390967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,7 +3495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864016280}
   - component: {fileID: 1864016283}
-  - component: {fileID: 1864016282}
+  - component: {fileID: 1864016284}
   - component: {fileID: 1864016281}
   m_Layer: 0
   m_Name: PlayerSkin(Mask_Dude)
@@ -3503,7 +3503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1864016280
 Transform:
   m_ObjectHideFlags: 0
@@ -3531,30 +3531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfa15985f96bce45bcc56c534385242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1864016282}
+  animator: {fileID: 1864016284}
   playerMove: {fileID: 459613597}
   playerJump: {fileID: 459613594}
---- !u!95 &1864016282
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864016279}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 748cdd7b1518f4342b8d71b13e656045, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1864016283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3607,6 +3586,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1864016284
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864016279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbef2dec83e294040aaa5fa49f5f049a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1872063403
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,7 +4018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2093651166
 Transform:
   m_ObjectHideFlags: 0
