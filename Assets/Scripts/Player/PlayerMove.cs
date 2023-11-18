@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -5,8 +6,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("Setup")]
+    public event Action<bool> onPlayerIdleChange;
 
+    [Header("Setup")]
     [SerializeField] private float speed;
 
     private float currenSpeed = 0;
@@ -46,6 +48,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(jump.isGrounded)
         {
+            onPlayerIdleChange?.Invoke(true);
             speed = 0;
             rb.AddForce(new Vector2(-0.8f, 0), ForceMode2D.Force);
         }
@@ -53,6 +56,7 @@ public class PlayerMove : MonoBehaviour
         else 
         {
             speed = currenSpeed;
+            onPlayerIdleChange?.Invoke(false);
         }
     }
 }

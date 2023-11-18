@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,22 @@ public class PlayerJump : MonoBehaviour
 
     public float jumpForce;
 
+    public event Action<bool> onPlayerJumpChange;
+
     public void StartJump() 
     {
-        if (isGrounded) 
+        if (isGrounded == true) 
         {
+            StartCoroutine(PlayerJumpAnimation(1));
             rb.AddForce(new Vector2(0, jumpForce));
         }
+    }
+
+    private IEnumerator PlayerJumpAnimation(int time) 
+    {
+        onPlayerJumpChange?.Invoke(true);
+        yield return new WaitForSeconds(time);
+        onPlayerJumpChange?.Invoke(false);
     }
 
     public void CheckIsGrounded() 
