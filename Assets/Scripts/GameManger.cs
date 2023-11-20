@@ -30,12 +30,13 @@ public class GameManger : MonoBehaviour
     public int newAsteroidSpeed;
 
     public bool pauseGame = false;
+    public bool selecCharacter = false;
 
 
 
     void Update()
     {
-        if (!PlayerPrefs.HasKey(playerPrefKey)) 
+        if(selecCharacter == true) 
         {
             tutorialManager.AddTaps(1);
             tutorialManager.CheckTaps();

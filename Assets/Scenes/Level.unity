@@ -605,7 +605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 164772368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 288097245}
+        m_TargetAssemblyTypeName: SelectCharacterButtons, Assembly-CSharp
+        m_MethodName: SelectMaskDudeSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &164772368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288097243}
   - component: {fileID: 288097244}
+  - component: {fileID: 288097245}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -808,6 +821,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1205255373}
+  - {fileID: 2043146822}
   m_Father: {fileID: 775889361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -832,6 +846,26 @@ MonoBehaviour:
   secondTap: {fileID: 869690500}
   gameManager: {fileID: 377569192}
   maxTime: 2
+--- !u!114 &288097245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288097242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba277f15c0db8794fb6ef1d38a24245a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSkins:
+  - {fileID: 1029974496}
+  - {fileID: 2093651165}
+  - {fileID: 698875831}
+  - {fileID: 1864016279}
+  selectCharacterPopup: {fileID: 2043146821}
+  tutorialPopup: {fileID: 1205255372}
+  gameManger: {fileID: 377569192}
 --- !u!1 &314175333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1164,7 @@ MonoBehaviour:
   maxScoreToIncreastDificult: 5
   newAsteroidSpeed: 20
   pauseGame: 0
+  selecCharacter: 0
 --- !u!4 &377569193
 Transform:
   m_ObjectHideFlags: 0
@@ -1677,7 +1712,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 560824627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 288097245}
+        m_TargetAssemblyTypeName: SelectCharacterButtons, Assembly-CSharp
+        m_MethodName: SelectPinkManSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &560824627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,7 +1845,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639039471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 288097245}
+        m_TargetAssemblyTypeName: SelectCharacterButtons, Assembly-CSharp
+        m_MethodName: SelectVirtualBoySkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639039471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,7 +2452,6 @@ RectTransform:
   - {fileID: 89995437}
   - {fileID: 1152434216}
   - {fileID: 288097243}
-  - {fileID: 2043146822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3089,7 +3147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1029974497
 Transform:
   m_ObjectHideFlags: 0
@@ -3367,7 +3425,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1054601192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 288097245}
+        m_TargetAssemblyTypeName: SelectCharacterButtons, Assembly-CSharp
+        m_MethodName: SelectNinjaFrogSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1054601192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5665,7 +5735,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043146821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5675,7 +5745,7 @@ RectTransform:
   - {fileID: 934313762}
   - {fileID: 1805244078}
   - {fileID: 358716725}
-  m_Father: {fileID: 775889361}
+  m_Father: {fileID: 288097243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
