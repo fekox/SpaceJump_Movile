@@ -10,8 +10,6 @@ using TMPro;
 
 public class PlayGamesAchievements : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI detailsText;
-
     public void Start()
     {
         SignIn();
@@ -30,12 +28,11 @@ public class PlayGamesAchievements : MonoBehaviour
             string userName = PlayGamesPlatform.Instance.GetUserDisplayName();
             string id = PlayGamesPlatform.Instance.GetUserId();
             string imageUrl = PlayGamesPlatform.Instance.GetUserImageUrl();
-            detailsText.text = "Sucessfully login:" + userName;
 
         }
         else
         {
-            detailsText.text = "Sign in Failed!";
+            Debug.Log("Sign in Failed!");
             // Disable your integration with Play Games Services or show a login button
             // to ask users to sign-in. Clicking it should call
             // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
