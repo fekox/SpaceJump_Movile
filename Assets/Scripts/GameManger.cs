@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 public class GameManger : MonoBehaviour
@@ -19,20 +20,24 @@ public class GameManger : MonoBehaviour
     [Header("Asteroid")]
     [SerializeField] private AsteroidMovement asteroidMovement;
 
+    [Header("Star")]
+    [SerializeField] private StarMovement starMovement;
+    [SerializeField] private StarSpawner starSpawner;
+
     [Header("Parallax")]
     [SerializeField] private Parallax[] parallax;
 
     [Header("Setup")]
     private bool canAumentPlatformSpeed = false;
-    
-    public string playerPrefKey = "ActiveTutorial";
+    private bool canSpawnStar = false;
+
     public int maxScoreToIncreastDificult;
     public int newAsteroidSpeed;
 
+    public int maxScoreToSpawnStar;
+
     public bool pauseGame = false;
     public bool selecCharacter = false;
-
-
 
     void Update()
     {
@@ -57,6 +62,8 @@ public class GameManger : MonoBehaviour
                 platformMovement[i].RepositionPlatform();
             }
 
+            SpawnStart();
+
             asteroidMovement.AsteroidMove();
             asteroidMovement.RepositionAsteroid();
 
@@ -74,6 +81,7 @@ public class GameManger : MonoBehaviour
         {
             IncreasePlatformsSpeed();
             IncreaseAsteroidSpeed();
+            IncreaseStarSpeed();
 
             canAumentPlatformSpeed = true;
         }
@@ -96,5 +104,25 @@ public class GameManger : MonoBehaviour
     {
         asteroidMovement.moveSpeed += 1;
         asteroidMovement.asteroidXPos += newAsteroidSpeed;
+    }
+
+    private void IncreaseStarSpeed() 
+    {
+        starMovement.starSpeed += 1;
+    }
+
+    private void SpawnStart() 
+    {
+        if (scoreManager.platformCounter % maxScoreToSpawnStar == 0 && scoreManager.platformCounter != 0 && !canSpawnStar)
+        {
+            starSpawner.SpawStar();
+
+            canSpawnStar = true;
+        }
+
+        if (scoreManager.platformCounter % maxScoreToSpawnStar != 0 && canSpawnStar)
+        {
+            canSpawnStar = false;
+        }
     }
 }

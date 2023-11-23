@@ -944,14 +944,16 @@ MonoBehaviour:
   - {fileID: 885738718}
   - {fileID: 1740953755}
   asteroidMovement: {fileID: 3407495751722496546}
+  starMovement: {fileID: 9110366545315690772, guid: ad94f619f5729a34792ddd80da68cf0a, type: 3}
+  starSpawner: {fileID: 446295616}
   parallax:
   - {fileID: 813063865}
   - {fileID: 1179727093}
   - {fileID: 1221614862}
   - {fileID: 1420042290}
-  playerPrefKey: ActiveTutorial
   maxScoreToIncreastDificult: 5
   newAsteroidSpeed: 20
+  maxScoreToSpawnStar: 10
   pauseGame: 0
   selecCharacter: 0
 --- !u!4 &377569193
@@ -1037,6 +1039,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &446295614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446295615}
+  - component: {fileID: 446295616}
+  m_Layer: 0
+  m_Name: StarSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &446295615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446295614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1129880445}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446295616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446295614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbce2785b87f0f4983e82a205f2c550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  star: {fileID: 6347128106225670329, guid: ad94f619f5729a34792ddd80da68cf0a, type: 3}
 --- !u!1 &459613590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,6 +3003,7 @@ Transform:
   - {fileID: 1872063404}
   - {fileID: 802934917}
   - {fileID: 1503770387}
+  - {fileID: 446295615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1129880446
