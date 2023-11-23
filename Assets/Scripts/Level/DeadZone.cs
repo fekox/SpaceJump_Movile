@@ -10,11 +10,13 @@ public class DeadZone : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private LoadLevel loadLevel;
+    [SerializeField] private StarsCounterManager starsCounterManager;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
+            starsCounterManager.SaveStarsScore();
             VibrateCellPhone();
             loadLevel.LoadScene();
         }
