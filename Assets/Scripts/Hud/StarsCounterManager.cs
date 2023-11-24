@@ -32,11 +32,13 @@ public class StarsCounterManager : MonoBehaviour
     public void AddStars(int number) 
     {
         starsScore += number;
+        SaveStarsScore();
     }
 
     public void RemoveStars(int number) 
     {
         starsScore -= number;
+        SaveStarsScore();
     }
 
     public void SaveStarsScore()

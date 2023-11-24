@@ -16,7 +16,6 @@ public class DeadZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
-            starsCounterManager.SaveStarsScore();
             VibrateCellPhone();
             loadLevel.LoadScene();
         }

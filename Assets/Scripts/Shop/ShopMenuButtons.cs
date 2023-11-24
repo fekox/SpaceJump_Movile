@@ -17,6 +17,9 @@ public class ShopMenuButtons : MonoBehaviour
     [SerializeField] private GameObject menuButton;
     [SerializeField] private GameObject cantBuyButton;
 
+    [Header("Shop System")]
+    [SerializeField] private BuySystem[] buySystem;
+
     [Header("Stars Counter Manager")]
     [SerializeField] private StarsCounterManager starsCounterManager;
 
@@ -32,7 +35,7 @@ public class ShopMenuButtons : MonoBehaviour
     private int pricePowerUp = 10;
 
     [Header("SetUp")]
-    private int buttonId = 0;
+    private int itemId = 0;
     public void ReturnMenu()
     {
         SceneManager.LoadScene(sceneName[0]);
@@ -40,7 +43,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowPinkManSkin() 
     {
-        buttonId = 1;
+        itemId = 1;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[0]);
         popUpManager.SetPriceText(priceText);
@@ -53,7 +56,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowNinjaFrogSkin() 
     {
-        buttonId = 1;
+        itemId = 2;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[1]);
         popUpManager.SetPriceText(priceText);
@@ -66,7 +69,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowMaskDudeSkin() 
     {
-        buttonId = 1;
+        itemId = 3;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[2]);
         popUpManager.SetPriceText(priceText);
@@ -79,7 +82,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowX2PowerUp() 
     {
-        buttonId = 2;
+        itemId = 4;
         popUpManager.CheckPowerUp();
         priceText.text = pricePowerUpTextValue;
         X2Text.SetActive(true);
@@ -91,7 +94,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowPlusMetersPowerUp() 
     {
-        buttonId = 2;
+        itemId = 5;
         popUpManager.CheckPowerUp();
         priceText.text = pricePowerUpTextValue;
         X2Text.SetActive(false);
@@ -118,40 +121,86 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void PopUpBuy() 
     {
-        switch (buttonId) 
+        switch (itemId)
         {
             case 1:
+                if (CheckIfCanBuy(priceSkins))
+                {
+                    starsCounterManager.RemoveStars(priceSkins);
+                    buySystem[0].BuyObject();
+                    popUp.SetActive(false);
+                    menuButton.SetActive(true);
+                    shop.SetActive(true);
+                }
 
-            if (CheckIfCanBuy(priceSkins)) 
-            {
-                starsCounterManager.RemoveStars(priceSkins);
-                popUp.SetActive(false);
-                menuButton.SetActive(true);
-                shop.SetActive(true);
-            }
-
-            else 
-            {
-                cantBuyButton.SetActive(true);
-            }
-
+                else
+                {
+                    cantBuyButton.SetActive(true);
+                }
             break;
 
             case 2:
+                if (CheckIfCanBuy(priceSkins))
+                {
+                    starsCounterManager.RemoveStars(priceSkins);
+                    buySystem[1].BuyObject();
+                    popUp.SetActive(false);
+                    menuButton.SetActive(true);
+                    shop.SetActive(true);
+                }
 
-            if (CheckIfCanBuy(pricePowerUp)) 
-            {
-                starsCounterManager.RemoveStars(pricePowerUp);
-                popUp.SetActive(false);
-                menuButton.SetActive(true);
-                shop.SetActive(true);
-            }
+                else
+                {
+                    cantBuyButton.SetActive(true);
+                }
+            break;
 
-            else
-            {
-                cantBuyButton.SetActive(true);
-            }
+            case 3:
+                if (CheckIfCanBuy(priceSkins))
+                {
+                    starsCounterManager.RemoveStars(priceSkins);
+                    buySystem[2].BuyObject();
+                    popUp.SetActive(false);
+                    menuButton.SetActive(true);
+                    shop.SetActive(true);
+                }
 
+                else
+                {
+                    cantBuyButton.SetActive(true);
+                }
+            break;
+
+            case 4:
+                if (CheckIfCanBuy(pricePowerUp))
+                {
+                    starsCounterManager.RemoveStars(pricePowerUp);
+                    buySystem[3].BuyObject();
+                    popUp.SetActive(false);
+                    menuButton.SetActive(true);
+                    shop.SetActive(true);
+                }
+
+                else
+                {
+                    cantBuyButton.SetActive(true);
+                }
+            break;
+
+            case 5:
+                if (CheckIfCanBuy(pricePowerUp))
+                {
+                    starsCounterManager.RemoveStars(pricePowerUp);
+                    buySystem[4].BuyObject();
+                    popUp.SetActive(false);
+                    menuButton.SetActive(true);
+                    shop.SetActive(true);
+                }
+
+                else
+                {
+                    cantBuyButton.SetActive(true);
+                }
             break;
         }
     }

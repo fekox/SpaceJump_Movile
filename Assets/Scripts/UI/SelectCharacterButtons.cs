@@ -17,16 +17,8 @@ public class SelectCharacterButtons : MonoBehaviour
     private void Start()
     {
         gameManger.pauseGame = true;
-        DisableSkins();
     }
 
-    private void DisableSkins() 
-    {
-        for (int i = 0; i < playerSkins.Length; i++) 
-        {
-            playerSkins[i].SetActive(false);
-        }
-    }
     public void SelectVirtualBoySkin() 
     {
         playerSkins[0].SetActive(true);
