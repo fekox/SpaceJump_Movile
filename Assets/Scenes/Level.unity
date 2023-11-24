@@ -188,6 +188,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonData
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonDataX2
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: platformPosX
       value: 12.5
       objectReference: {fileID: 0}
@@ -599,10 +607,6 @@ MonoBehaviour:
   selectCharacterPopup: {fileID: 2043146821}
   tutorialPopup: {fileID: 1205255372}
   gameManger: {fileID: 377569192}
-  enableButton:
-  - {fileID: 934313766}
-  - {fileID: 1805244082}
-  - {fileID: 358716729}
 --- !u!1001 &310759291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 1152434217}
   tutorialManager: {fileID: 288097244}
+  buttonDataPlus50M: {fileID: 11400000, guid: 97077407ba5a08e4cadfe9d703b45b67, type: 2}
   playerMove: {fileID: 459613597}
   playerJump: {fileID: 459613594}
   inputManager: {fileID: 459613596}
@@ -1380,6 +1385,7 @@ MonoBehaviour:
   starTag: Star
   jump: {fileID: 459613594}
   starsCounterManager: {fileID: 1152434218}
+  buttonData: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
 --- !u!1 &470289710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2337,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonData
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonDataX2
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: platformPosX
       value: 12.5
       objectReference: {fileID: 0}
@@ -2778,6 +2792,14 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonData
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
+    - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
+      propertyPath: buttonDataX2
+      value: 
+      objectReference: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
     - target: {fileID: 4666585949457686203, guid: 3f85c7c07e2bfa54f8f619f7fe9e5371, type: 3}
       propertyPath: platformPosX
       value: 12.5

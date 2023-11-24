@@ -8,6 +8,7 @@ public class GameManger : MonoBehaviour
     [Header("Refernces")]
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private TutorialManager tutorialManager;
+    [SerializeField] private ButtonData buttonDataPlus50M;
 
     [Header("Player")]
     [SerializeField] private PlayerMove playerMove;
@@ -30,6 +31,7 @@ public class GameManger : MonoBehaviour
     [Header("Setup")]
     private bool canAumentPlatformSpeed = false;
     private bool canSpawnStar = false;
+    private bool add50M = false;
 
     public int maxScoreToIncreastDificult;
     public int newAsteroidSpeed;
@@ -53,6 +55,7 @@ public class GameManger : MonoBehaviour
             playerMove.CorrectPlayerSpeed();
             playerMove.CheckMousePos();
             playerJump.CheckIsGrounded();
+            Plus50Meters();
 
             IncreaseGameSpeed();
 
@@ -123,6 +126,17 @@ public class GameManger : MonoBehaviour
         if (scoreManager.platformCounter % maxScoreToSpawnStar != 0 && canSpawnStar)
         {
             canSpawnStar = false;
+        }
+    }
+
+    private void Plus50Meters() 
+    {
+        int num = 50;
+
+        if (buttonDataPlus50M.isBuyed == true && add50M == false) 
+        {
+            scoreManager.platformCounter += num;
+            add50M = true;
         }
     }
 }

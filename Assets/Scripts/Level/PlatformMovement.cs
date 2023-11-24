@@ -16,7 +16,8 @@ public class PlatformMovement : MonoBehaviour
 
     [Header("Refernces")]
     [SerializeField] private ScoreManager scoreManager;
-    
+    [SerializeField] private ButtonData buttonDataX2;
+
     public GameObject platformCollider;
 
     public void PlatformMove() 
@@ -36,7 +37,20 @@ public class PlatformMovement : MonoBehaviour
         if (transform.position.x <= platformCollider.transform.position.x)
         {
             SetPlatformPosition(platformPosX);
+            MultiplyScore();
+        }
+    }
+
+    private void MultiplyScore()
+    {
+        if (buttonDataX2.isBuyed == true)
+        {
+            scoreManager.platformCounter += 2;
+        }
+
+        if (buttonDataX2.isBuyed == false)
+        {
             scoreManager.platformCounter++;
         }
-    }   
+    }
 }

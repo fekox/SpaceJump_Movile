@@ -9,10 +9,6 @@ public class StarMovement : MonoBehaviour
     public float starSpeed;
     public string playerTag;
 
-    [Header("References")]
-    [SerializeField] private StarsCounterManager starsCM;
-    [SerializeField] private StarSpawner starSpawner;
-
     private void Start()
     {
         starSpeed = 5;

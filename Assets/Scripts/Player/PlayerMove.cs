@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerJump jump;
     [SerializeField] private StarsCounterManager starsCounterManager;
+    [SerializeField] private ButtonData buttonData;
 
     private void Start()
     {
@@ -68,6 +69,19 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag(starTag)) 
         {
             Destroy(collision.gameObject);
+            MultiplyStars();
+        }
+    }
+
+    private void MultiplyStars() 
+    {
+        if (buttonData.isBuyed == true)
+        {
+            starsCounterManager.AddStars(2);
+        }
+
+        if (buttonData.isBuyed == false) 
+        {
             starsCounterManager.AddStars(1);
         }
     }
