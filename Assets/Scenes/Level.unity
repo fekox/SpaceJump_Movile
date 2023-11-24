@@ -1243,7 +1243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  starTag: Star
   jump: {fileID: 459613594}
+  starsCounterManager: {fileID: 1152434218}
 --- !u!1 &470289710
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ public class StarSpawner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject star;
-    private GameObject newStar;
 
     private float maxStarPosY = 3f;
     private float minStarPosY = 0f;
@@ -15,6 +14,6 @@ public class StarSpawner : MonoBehaviour
     {
         float starPosY = Random.Range(maxStarPosY, minStarPosY);
         transform.position = new Vector3(transform.position.x, starPosY, 0f);
-        newStar = Instantiate(star, transform.position, transform.rotation);
+        GameObject newStar = Instantiate(star, transform.position, transform.rotation);
     }
 }

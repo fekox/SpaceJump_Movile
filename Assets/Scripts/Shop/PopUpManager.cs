@@ -10,6 +10,9 @@ public class PopUpManager : MonoBehaviour
     [SerializeField] private GameObject skinImageGo;
     [SerializeField] private TextMeshProUGUI priceText;
 
+    [Header("Stars Counter Manager")]
+    [SerializeField] private StarsCounterManager starsCounterManager;
+
     public void SetSkinImage(Image newSkinImage) 
     {
         skinImageGo.SetActive(true);

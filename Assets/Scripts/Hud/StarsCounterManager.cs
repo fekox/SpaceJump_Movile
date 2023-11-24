@@ -8,13 +8,14 @@ public class StarsCounterManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private string starsPlayerPref;
     
-    private int starsScore = 0;
+    public int starsScore;
 
     [Header("References")]
     public TextMeshProUGUI starsCounterText;
 
     void Start()
     {
+        starsScore = GetPlayerStarsScore();
         ShowStartsScore();
     }
 
@@ -25,12 +26,17 @@ public class StarsCounterManager : MonoBehaviour
 
     private void ShowStartsScore() 
     {
-        starsCounterText.text = GetPlayerStarsScore().ToString();
+        starsCounterText.text = starsScore.ToString();
     }
 
     public void AddStars(int number) 
     {
         starsScore += number;
+    }
+
+    public void RemoveStars(int number) 
+    {
+        starsScore -= number;
     }
 
     public void SaveStarsScore()
@@ -41,7 +47,7 @@ public class StarsCounterManager : MonoBehaviour
 
     public int GetPlayerStarsScore() 
     {
-        int savedCoins = PlayerPrefs.GetInt(starsPlayerPref, starsScore);
+        int savedCoins = PlayerPrefs.GetInt(starsPlayerPref, 0);
 
         return savedCoins;
     }

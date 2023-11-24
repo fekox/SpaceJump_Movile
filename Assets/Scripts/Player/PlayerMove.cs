@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private float speed;
+    [SerializeField] private string starTag;
 
     private float currenSpeed = 0;
 
@@ -17,8 +18,10 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody2D rb;
 
+
     [Header("References")]
     [SerializeField] private PlayerJump jump;
+    [SerializeField] private StarsCounterManager starsCounterManager;
 
     private void Start()
     {
@@ -57,6 +60,15 @@ public class PlayerMove : MonoBehaviour
         {
             speed = currenSpeed;
             onPlayerIdleChange?.Invoke(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(starTag)) 
+        {
+            Destroy(collision.gameObject);
+            starsCounterManager.AddStars(1);
         }
     }
 }
