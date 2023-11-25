@@ -34,9 +34,9 @@ public class SelectCharacterButtons : MonoBehaviour
     {
         if (gameManger.pauseGame == true) 
         {
-            checkButtons[0].CheckButton(buttonData.isPinkManBuyed);
-            checkButtons[1].CheckButton(buttonData.isNinjaFrogBuyed);
-            checkButtons[2].CheckButton(buttonData.isMaskDudeBuyed);
+            checkButtons[0].CheckButton(buttonData.LoadInfo("PinkMan"));
+            checkButtons[1].CheckButton(buttonData.LoadInfo("NinjaFrog"));
+            checkButtons[2].CheckButton(buttonData.LoadInfo("MaskDude"));
         }
     }
 

@@ -221,27 +221,27 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void CheckItems() 
     {
-        if (buttonData.isPinkManBuyed == true)
+        if (buttonData.LoadInfo("PinkMan"))
         {
             disableIntems[0].ItemSold();
         }
 
-        if (buttonData.isNinjaFrogBuyed == true)
+        if (buttonData.LoadInfo("NinjaFrog"))
         {
             disableIntems[1].ItemSold();
         }
 
-        if (buttonData.isMaskDudeBuyed == true)
+        if (buttonData.LoadInfo("MaskDude"))
         {
             disableIntems[2].ItemSold();
         }
 
-        if (buttonData.isX2Buyed == true)
+        if (buttonData.LoadInfo("X2"))
         {
             disableIntems[3].ItemSold();
         }
 
-        if (buttonData.isPlus50Buyed == true)
+        if (buttonData.LoadInfo("+50M"))
         {
             disableIntems[4].ItemSold();
         }

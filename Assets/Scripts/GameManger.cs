@@ -142,7 +142,7 @@ public class GameManger : MonoBehaviour
     {
         int num = 50;
 
-        if (buttonData.isPlus50Buyed == true && add50M == false) 
+        if (buttonData.LoadInfo("+50M") == true && add50M == false) 
         {
             scoreManager.platformCounter += num;
             add50M = true;
@@ -151,22 +151,22 @@ public class GameManger : MonoBehaviour
 
     private void CheckPowerUps() 
     {
-        if(buttonData.isX2Buyed == true) 
+        if(buttonData.LoadInfo("X2")) 
         {
             X2PowerUp.SetActive(true);
         }
 
-        if (buttonData.isX2Buyed == false)
+        if (!buttonData.LoadInfo("X2"))
         {
             X2PowerUp.SetActive(false);
         }
 
-        if (buttonData.isPlus50Buyed == true) 
+        if (buttonData.LoadInfo("+50M")) 
         {
             plusFiftyPowerUp.SetActive(true);
         }
 
-        if (buttonData.isPlus50Buyed == false)
+        if (!buttonData.LoadInfo("+50M"))
         {
             plusFiftyPowerUp.SetActive(false);
         }
