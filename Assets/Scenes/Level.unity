@@ -1201,7 +1201,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
-  jumpForce: 250
+  jumpForcePc: 50
+  jumpForceMovile: 250
 --- !u!61 &459613595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1273,7 +1274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa03e0b08ceac5a45944d299177225f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speedPc: 1
+  speedMovile: 7
   starTag: Star
   jump: {fileID: 459613594}
   starsCounterManager: {fileID: 1152434218}

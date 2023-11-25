@@ -9,11 +9,19 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    private float jumpForce;
+
     public bool isGrounded;
 
-    public float jumpForce;
+    public float jumpForcePc;
+    public float jumpForceMovile;
 
     public event Action<bool> onPlayerJumpChange;
+
+    private void Start()
+    {
+        CheckJumpForce();
+    }
 
     public void StartJump() 
     {
@@ -34,5 +42,18 @@ public class PlayerJump : MonoBehaviour
     public void CheckIsGrounded() 
     {
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.6f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+    }
+
+    private void CheckJumpForce() 
+    {
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            jumpForce = jumpForcePc;
+        }
+
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            jumpForce = jumpForceMovile;
+        }
     }
 }

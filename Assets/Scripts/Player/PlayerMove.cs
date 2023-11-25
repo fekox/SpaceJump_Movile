@@ -9,10 +9,12 @@ public class PlayerMove : MonoBehaviour
     public event Action<bool> onPlayerIdleChange;
 
     [Header("Setup")]
-    [SerializeField] private float speed;
+    [SerializeField] private float speedPc;
+    [SerializeField] private float speedMovile;
     [SerializeField] private string starTag;
 
     private float currenSpeed = 0;
+    private float correctPlayerSpeed = -0.8f;
 
     private Vector3 mousePos;
 
@@ -26,8 +28,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
+        CheckSpeed();
         rb = GetComponent<Rigidbody2D>();
-        currenSpeed = speed; 
     }
 
     public void CheckMousePos() 
@@ -39,12 +41,12 @@ public class PlayerMove : MonoBehaviour
     {
         if (mousePos.x > 0.5)
         {
-            rb.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
+            rb.AddForce(new Vector2(currenSpeed, 0), ForceMode2D.Force);
         }
 
         if (mousePos.x < 0.5)
         {
-            rb.AddForce(new Vector2(-speed, 0), ForceMode2D.Force);
+            rb.AddForce(new Vector2(-currenSpeed, 0), ForceMode2D.Force);
         }
     }
 
@@ -53,13 +55,13 @@ public class PlayerMove : MonoBehaviour
         if(jump.isGrounded)
         {
             onPlayerIdleChange?.Invoke(true);
-            speed = 0;
-            rb.AddForce(new Vector2(-0.8f, 0), ForceMode2D.Force);
+            currenSpeed = 0;
+            rb.AddForce(new Vector2(correctPlayerSpeed, 0), ForceMode2D.Force);
         }
 
         else 
         {
-            speed = currenSpeed;
+            CheckSpeed();
             onPlayerIdleChange?.Invoke(false);
         }
     }
@@ -83,6 +85,19 @@ public class PlayerMove : MonoBehaviour
         if (!buttonData.LoadInfo("X2")) 
         {
             starsCounterManager.AddStars(1);
+        }
+    }
+
+    public void CheckSpeed() 
+    {
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            currenSpeed = speedPc; 
+        }
+
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            currenSpeed = speedMovile;
         }
     }
 }
