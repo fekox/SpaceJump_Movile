@@ -215,6 +215,8 @@ public class ShopMenuButtons : MonoBehaviour
                 }
             break;
         }
+
+        CheckItems();
     }
 
     public void CheckItems() 
