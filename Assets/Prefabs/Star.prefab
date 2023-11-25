@@ -175,7 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebfbde3225fca645a0d467316e9d40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starSpeed: 6
+  starSpeed: 8
   playerTag: Player
-  starsCM: {fileID: 0}
-  starSpawner: {fileID: 0}
