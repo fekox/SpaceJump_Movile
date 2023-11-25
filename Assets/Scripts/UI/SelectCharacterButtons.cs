@@ -14,9 +14,30 @@ public class SelectCharacterButtons : MonoBehaviour
     [Header("Game Manager")]
     [SerializeField] private GameManger gameManger;
 
+    [Header("Check Buttons")]
+    [SerializeField] private CheckButtons[] checkButtons;
+
+    [Header("Check Buttons")]
+    [SerializeField] private ButtonData buttonData;
+
     private void Start()
     {
         gameManger.pauseGame = true;
+    }
+
+    private void Update()
+    {
+        SelectCharacterManager();
+    }
+
+    public void SelectCharacterManager() 
+    {
+        if (gameManger.pauseGame == true) 
+        {
+            checkButtons[0].CheckButton(buttonData.isPinkManBuyed);
+            checkButtons[1].CheckButton(buttonData.isNinjaFrogBuyed);
+            checkButtons[2].CheckButton(buttonData.isMaskDudeBuyed);
+        }
     }
 
     public void SelectVirtualBoySkin() 

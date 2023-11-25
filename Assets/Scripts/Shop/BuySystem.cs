@@ -1,45 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BuySystem : MonoBehaviour
 {
     [SerializeField] private ButtonData buttonData;
-    [SerializeField] private GameObject enableItem;
-    [SerializeField] private GameObject disableItem;
-    [SerializeField] private Button button;
 
-    public void BuyObject() 
+    public void BuyPinkMan() 
     {
-        buttonData.isBuyed = true;
+        buttonData.isPinkManBuyed = true;
+    }
+    
+    public void BuyNinjaFrog() 
+    {
+        buttonData.isNinjaFrogBuyed = true;
     }
 
-    private void Update()
+    public void BuyMaskDude() 
     {
-        if (buttonData.isBuyed == true) 
-        {
-            DisableItem();
-        }
-
-        if (buttonData.isBuyed == false)
-        {
-            EnableItem();
-        }
-
+        buttonData.isMaskDudeBuyed = true;
     }
 
-    public void DisableItem() 
+    public void BuyX2PowerUp() 
     {
-        button.enabled = false;
-        enableItem.SetActive(true);
-        disableItem.SetActive(false);
+        buttonData.isX2Buyed = true;
     }
 
-    public void EnableItem() 
+    public void BuyPlusFiftyMeterPowerUp() 
     {
-        button.enabled = true;
-        enableItem.SetActive(false);
-        disableItem.SetActive(true);
+        buttonData.isPlus50Buyed = true;
     }
 }

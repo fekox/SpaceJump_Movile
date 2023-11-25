@@ -75,12 +75,12 @@ public class PlayerMove : MonoBehaviour
 
     private void MultiplyStars() 
     {
-        if (buttonData.isBuyed == true)
+        if (buttonData.isPlus50Buyed == true)
         {
             starsCounterManager.AddStars(2);
         }
 
-        if (buttonData.isBuyed == false) 
+        if (buttonData.isPlus50Buyed == false) 
         {
             starsCounterManager.AddStars(1);
         }

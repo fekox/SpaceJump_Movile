@@ -18,7 +18,14 @@ public class ShopMenuButtons : MonoBehaviour
     [SerializeField] private GameObject cantBuyButton;
 
     [Header("Shop System")]
-    [SerializeField] private BuySystem[] buySystem;
+    [SerializeField] private BuySystem buySystem;
+
+
+    [Header("Button Data")]
+    [SerializeField] private ButtonData buttonData;
+
+    [Header("Disable Item")]
+    [SerializeField] private DisableIntem[] disableIntems;
 
     [Header("Stars Counter Manager")]
     [SerializeField] private StarsCounterManager starsCounterManager;
@@ -36,6 +43,11 @@ public class ShopMenuButtons : MonoBehaviour
 
     [Header("SetUp")]
     private int itemId = 0;
+
+    private void Start()
+    {
+        CheckItems();
+    }
     public void ReturnMenu()
     {
         SceneManager.LoadScene(sceneName[0]);
@@ -127,7 +139,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    buySystem[0].BuyObject();
+                    buySystem.BuyPinkMan();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
                     shop.SetActive(true);
@@ -143,7 +155,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    buySystem[1].BuyObject();
+                    buySystem.BuyNinjaFrog();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
                     shop.SetActive(true);
@@ -159,7 +171,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    buySystem[2].BuyObject();
+                    buySystem.BuyMaskDude();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
                     shop.SetActive(true);
@@ -175,7 +187,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
-                    buySystem[3].BuyObject();
+                    buySystem.BuyX2PowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
                     shop.SetActive(true);
@@ -191,7 +203,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
-                    buySystem[4].BuyObject();
+                    buySystem.BuyPlusFiftyMeterPowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
                     shop.SetActive(true);
@@ -205,6 +217,33 @@ public class ShopMenuButtons : MonoBehaviour
         }
     }
 
+    public void CheckItems() 
+    {
+        if (buttonData.isPinkManBuyed == true)
+        {
+            disableIntems[0].ItemSold();
+        }
+
+        if (buttonData.isNinjaFrogBuyed == true)
+        {
+            disableIntems[1].ItemSold();
+        }
+
+        if (buttonData.isMaskDudeBuyed == true)
+        {
+            disableIntems[2].ItemSold();
+        }
+
+        if (buttonData.isX2Buyed == true)
+        {
+            disableIntems[3].ItemSold();
+        }
+
+        if (buttonData.isPlus50Buyed == true)
+        {
+            disableIntems[4].ItemSold();
+        }
+    }
     public void PopUpExit() 
     {
         popUp.SetActive(false);

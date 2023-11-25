@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnableSelectCharacterButton : MonoBehaviour
+public class CheckButtons : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private ButtonData buttonData;
     [SerializeField] private GameObject skinBlack;
     [SerializeField] private Button button;
 
-    private void Update()
+    public void CheckButton(bool isBuyed) 
     {
-        CheckButton();
-    }
-
-    public void CheckButton() 
-    {
-        if (buttonData.isBuyed == true)
+        if (isBuyed == true)
         {
             button.enabled = true;
             skinBlack.SetActive(false);
         }
 
-        if (buttonData.isBuyed == false)
+        if (isBuyed == false)
         {
             button.enabled = false;
             skinBlack.SetActive(true);

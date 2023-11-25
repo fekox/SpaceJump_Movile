@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 109660876}
   - component: {fileID: 109660875}
   m_Layer: 5
-  m_Name: PlayerSkin
+  m_Name: MaskDude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,6 +607,11 @@ MonoBehaviour:
   selectCharacterPopup: {fileID: 2043146821}
   tutorialPopup: {fileID: 1205255372}
   gameManger: {fileID: 377569192}
+  checkButtons:
+  - {fileID: 934313766}
+  - {fileID: 1805244082}
+  - {fileID: 358716729}
+  buttonData: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
 --- !u!1 &314175333
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +624,7 @@ GameObject:
   - component: {fileID: 314175336}
   - component: {fileID: 314175335}
   m_Layer: 5
-  m_Name: PlayerSkin
+  m_Name: PinkMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +798,7 @@ GameObject:
   - component: {fileID: 358716728}
   - component: {fileID: 358716729}
   m_Layer: 5
-  m_Name: PlayerSkinBackground (3)
+  m_Name: PlayerSkinBackground 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,7 +931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6c6992e66a93d47bf3561dec733981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonData: {fileID: 11400000, guid: 7df30b99dff9bb54e88f956313fed216, type: 2}
   skinBlack: {fileID: 1668320358}
   button: {fileID: 358716728}
 --- !u!1 &377569191
@@ -960,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 1152434217}
   tutorialManager: {fileID: 288097244}
-  buttonDataPlus50M: {fileID: 11400000, guid: 97077407ba5a08e4cadfe9d703b45b67, type: 2}
+  buttonData: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
   playerMove: {fileID: 459613597}
   playerJump: {fileID: 459613594}
   inputManager: {fileID: 459613596}
@@ -1284,7 +1288,7 @@ GameObject:
   - component: {fileID: 470289713}
   - component: {fileID: 470289712}
   m_Layer: 5
-  m_Name: PlayerSkinBlack
+  m_Name: PinkManSkinBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2478,7 +2482,7 @@ GameObject:
   - component: {fileID: 934313765}
   - component: {fileID: 934313766}
   m_Layer: 5
-  m_Name: PlayerSkinBackground (1)
+  m_Name: PlayerSkinBackground 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2611,7 +2615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6c6992e66a93d47bf3561dec733981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonData: {fileID: 11400000, guid: 3af98688afb2dc34186fe0d26677f960, type: 2}
   skinBlack: {fileID: 470289710}
   button: {fileID: 934313765}
 --- !u!1001 &1018654998
@@ -3987,7 +3990,7 @@ GameObject:
   - component: {fileID: 1430144163}
   - component: {fileID: 1430144162}
   m_Layer: 5
-  m_Name: PlayerSkinBlack
+  m_Name: NinjaFrogSkinBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4324,7 +4327,7 @@ GameObject:
   - component: {fileID: 1668320361}
   - component: {fileID: 1668320360}
   m_Layer: 5
-  m_Name: PlayerSkinBlack
+  m_Name: MaskDudeSkinBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4492,7 +4495,7 @@ GameObject:
   - component: {fileID: 1805244081}
   - component: {fileID: 1805244082}
   m_Layer: 5
-  m_Name: PlayerSkinBackground (2)
+  m_Name: PlayerSkinBackground 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4625,7 +4628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6c6992e66a93d47bf3561dec733981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonData: {fileID: 11400000, guid: 636f9221ce4ac5c4fbd5703979e20c9c, type: 2}
   skinBlack: {fileID: 1430144160}
   button: {fileID: 1805244081}
 --- !u!1 &1816874120
@@ -4995,7 +4997,7 @@ GameObject:
   - component: {fileID: 1925719544}
   - component: {fileID: 1925719543}
   m_Layer: 5
-  m_Name: PlayerSkin
+  m_Name: NinjaFrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,7 +8,7 @@ public class GameManger : MonoBehaviour
     [Header("Refernces")]
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private TutorialManager tutorialManager;
-    [SerializeField] private ButtonData buttonDataPlus50M;
+    [SerializeField] private ButtonData buttonData;
 
     [Header("Player")]
     [SerializeField] private PlayerMove playerMove;
@@ -133,7 +133,7 @@ public class GameManger : MonoBehaviour
     {
         int num = 50;
 
-        if (buttonDataPlus50M.isBuyed == true && add50M == false) 
+        if (buttonData.isPlus50Buyed == true && add50M == false) 
         {
             scoreManager.platformCounter += num;
             add50M = true;
