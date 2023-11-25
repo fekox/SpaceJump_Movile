@@ -28,11 +28,15 @@ public class GameManger : MonoBehaviour
     [Header("Parallax")]
     [SerializeField] private Parallax[] parallax;
 
-    [Header("Setup")]
+    [Header("Enable PowerUps")]
+    [SerializeField] private GameObject X2PowerUp;
+    [SerializeField] private GameObject plusFiftyPowerUp;
+
     private bool canAumentPlatformSpeed = false;
     private bool canSpawnStar = false;
     private bool add50M = false;
 
+    [Header("Setup")]
     public int maxScoreToIncreastDificult;
     public int newAsteroidSpeed;
 
@@ -51,6 +55,8 @@ public class GameManger : MonoBehaviour
 
         if (pauseGame == false) 
         {
+            X2PowerUp.SetActive(true);
+            plusFiftyPowerUp.SetActive(true);
             inputManager.CheckInputs();
             playerMove.CorrectPlayerSpeed();
             playerMove.CheckMousePos();
@@ -135,8 +141,14 @@ public class GameManger : MonoBehaviour
 
         if (buttonData.isPlus50Buyed == true && add50M == false) 
         {
+            plusFiftyPowerUp.SetActive(true);
             scoreManager.platformCounter += num;
             add50M = true;
+        }
+
+        if(buttonData.isX2Buyed == true) 
+        {
+            X2PowerUp.SetActive(true);
         }
     }
 }

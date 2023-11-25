@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a88535b6a227e47a7393a8b27c353d, type: 3}
   m_Name: ButtonData
   m_EditorClassIdentifier: 
-  isPinkManBuyed: 1
-  isNinjaFrogBuyed: 1
-  isMaskDudeBuyed: 1
+  isPinkManBuyed: 0
+  isNinjaFrogBuyed: 0
+  isMaskDudeBuyed: 0
   isX2Buyed: 0
   isPlus50Buyed: 0
