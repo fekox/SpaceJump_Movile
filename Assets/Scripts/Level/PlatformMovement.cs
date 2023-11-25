@@ -43,12 +43,12 @@ public class PlatformMovement : MonoBehaviour
 
     private void MultiplyScore()
     {
-        if (buttonData.isX2Buyed == true)
+        if (buttonData.LoadInfo("X2"))
         {
             scoreManager.platformCounter += 2;
         }
 
-        if (buttonData.isX2Buyed == false)
+        if (!buttonData.LoadInfo("X2"))
         {
             scoreManager.platformCounter++;
         }

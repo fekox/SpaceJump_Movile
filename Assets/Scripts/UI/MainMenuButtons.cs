@@ -48,6 +48,7 @@ public class MainMenuButtons : MonoBehaviour
     public void ResetPlayerPrefs() 
     {
         PlayerPrefs.DeleteAll();
+        Debug.Log("All PlayerPrefs deleted");
     }
 
     public void ExitGame()

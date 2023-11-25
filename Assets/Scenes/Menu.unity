@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 775889362}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: AddStars
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -888,6 +888,7 @@ MonoBehaviour:
   - ShopMenu
   - Credits
   - Plugins
+  starSpawner: {fileID: 1280806064}
   debugButtons: {fileID: 345539756}
 --- !u!1 &776162511
 GameObject:
@@ -1802,7 +1803,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 775889362}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: ResetPlayerPrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

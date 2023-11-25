@@ -75,12 +75,12 @@ public class PlayerMove : MonoBehaviour
 
     private void MultiplyStars() 
     {
-        if (buttonData.LoadInfo("+50M"))
+        if (buttonData.LoadInfo("X2"))
         {
             starsCounterManager.AddStars(2);
         }
 
-        if (!buttonData.LoadInfo("+50M")) 
+        if (!buttonData.LoadInfo("X2")) 
         {
             starsCounterManager.AddStars(1);
         }
