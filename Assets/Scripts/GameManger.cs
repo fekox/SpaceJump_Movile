@@ -45,6 +45,11 @@ public class GameManger : MonoBehaviour
     public bool pauseGame = false;
     public bool selecCharacter = false;
 
+    private void Start()
+    {
+        CheckPowerUps();
+    }
+
     void Update()
     {
         if(selecCharacter == true) 
@@ -55,8 +60,6 @@ public class GameManger : MonoBehaviour
 
         if (pauseGame == false) 
         {
-            X2PowerUp.SetActive(true);
-            plusFiftyPowerUp.SetActive(true);
             inputManager.CheckInputs();
             playerMove.CorrectPlayerSpeed();
             playerMove.CheckMousePos();
@@ -141,14 +144,31 @@ public class GameManger : MonoBehaviour
 
         if (buttonData.isPlus50Buyed == true && add50M == false) 
         {
-            plusFiftyPowerUp.SetActive(true);
             scoreManager.platformCounter += num;
             add50M = true;
         }
+    }
 
+    private void CheckPowerUps() 
+    {
         if(buttonData.isX2Buyed == true) 
         {
             X2PowerUp.SetActive(true);
+        }
+
+        if (buttonData.isX2Buyed == false)
+        {
+            X2PowerUp.SetActive(false);
+        }
+
+        if (buttonData.isPlus50Buyed == true) 
+        {
+            plusFiftyPowerUp.SetActive(true);
+        }
+
+        if (buttonData.isPlus50Buyed == false)
+        {
+            plusFiftyPowerUp.SetActive(false);
         }
     }
 }
