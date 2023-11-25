@@ -7,6 +7,17 @@ public class MainMenuButtons : MonoBehaviour
 {
     [SerializeField] private string[] sceneName;
 
+    public GameObject debugButtons;
+
+    private void Start()
+    {
+#if UNITY_EDITOR
+        debugButtons.SetActive(true);
+#endif
+
+        debugButtons.SetActive(false);
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(sceneName[0]);
