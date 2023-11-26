@@ -17,6 +17,9 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        InterfaceScore score = new ScoreProxy();
+        platformCounter = score.GetScore();
+
         ShowScore();
     }
 
