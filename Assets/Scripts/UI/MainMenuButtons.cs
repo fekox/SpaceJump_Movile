@@ -8,7 +8,6 @@ public class MainMenuButtons : MonoBehaviour
     [SerializeField] private string[] sceneName;
     [SerializeField] private StarsCounterManager starSpawner;
 
-
     public GameObject debugButtons;
 
     private void Start()
