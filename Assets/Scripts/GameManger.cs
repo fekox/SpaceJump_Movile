@@ -32,6 +32,18 @@ public class GameManger : MonoBehaviour
     [SerializeField] private GameObject X2PowerUp;
     [SerializeField] private GameObject plusFiftyPowerUp;
 
+    [Header("Play Games Achievements")]
+    [SerializeField] private PlayGamesAchievements1 achievements;
+
+    private int firstAchievement = 10;
+    bool getOneAchievement = false;
+
+    private int secondAchievement = 50;
+    bool getTwoAchievement = false;
+
+    private int thirtAchievement = 100;
+    bool getThreeAchievement = false;
+
     private bool canAumentPlatformSpeed = false;
     private bool canSpawnStar = false;
     private bool add50M = false;
@@ -67,6 +79,7 @@ public class GameManger : MonoBehaviour
             Plus50Meters();
 
             IncreaseGameSpeed();
+            CheckAchievements();
 
             for (int i = 0; i < platformMovement.Length; i++)
             {
@@ -169,6 +182,27 @@ public class GameManger : MonoBehaviour
         if (!buttonData.LoadInfo("+50M"))
         {
             plusFiftyPowerUp.SetActive(false);
+        }
+    }
+
+    private void CheckAchievements()
+    {
+        if(scoreManager.platformCounter >= firstAchievement && getOneAchievement == false) 
+        {
+            achievements.Get10Points();
+            getOneAchievement = true;
+        }
+
+        if (scoreManager.platformCounter >= secondAchievement && getTwoAchievement == false)
+        {
+            achievements.Get50Points();
+            getTwoAchievement = true;
+        }
+
+        if (scoreManager.platformCounter >= thirtAchievement && getThreeAchievement == false)
+        {
+            achievements.Get100Points();
+            getThreeAchievement = true;
         }
     }
 }

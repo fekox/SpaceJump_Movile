@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plugin: {fileID: 1726963751}
   textPrefab: {fileID: 1641165166879676338, guid: 631347117dbfde144bcafd36f3057671, type: 3}
-  textParentTransform: {fileID: 161209564}
+  textParentTransform: {fileID: 977938068}
 --- !u!1 &1972039412
 GameObject:
   m_ObjectHideFlags: 0

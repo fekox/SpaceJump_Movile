@@ -34,7 +34,7 @@ public class PluginToMovile : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             _pluginInstance = new AndroidJavaObject(packageName + className);
-            _pluginClass = new AndroidJavaClass(packageName + className);
+            _pluginClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             _unityActivity = _pluginClass.GetStatic<AndroidJavaObject>("currentActivity");
             _pluginInstance.CallStatic("SetUnityActivity", _unityActivity);
 
@@ -61,11 +61,17 @@ public class PluginToMovile : MonoBehaviour
                 case LogType.Error:
                     _pluginInstance.Call("SendPerTypeOfLog", logsString, 2);
                     break;
+                case LogType.Assert:
+                    _pluginInstance.Call("SendPerTypeOfLog", logsString);
+                    break;
                 case LogType.Warning:
                     _pluginInstance.Call("SendPerTypeOfLog", logsString, 1);
                     break;
                 case LogType.Log:
                     _pluginInstance.Call("SendPerTypeOfLog", logsString, 0);
+                    break;
+                case LogType.Exception:
+                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 3);
                     break;
             }
         }

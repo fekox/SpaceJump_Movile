@@ -1,20 +1,18 @@
 package com.example.santosloggerplugin;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Environment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
+import java.io.FileWriter;
+import android.app.AlertDialog;
+import android.widget.Toast;
 
 public class SantosLogger
 {
@@ -28,7 +26,9 @@ public class SantosLogger
     {
         DebugLog,
         WarningLog,
-        ErrorLog
+        ErrorLog,
+
+        Exeption
     };
 
     static SantosLogger _instance = null;
@@ -62,7 +62,7 @@ public class SantosLogger
 
     public void SendPerTypeOfLog(int logType, String logText)
     {
-        String typeOfLogText;
+        String typeOfLogText = "Empty";
         TypeOfLog typeOfLog = TypeOfLog.values()[logType];
 
         switch (typeOfLog)
@@ -79,6 +79,11 @@ public class SantosLogger
 
             case ErrorLog:
                 Log.e("Log from Unity: ", logText);
+                typeOfLogText = "ErrorLog";
+            break;
+
+            case Exeption:
+                Log.d("Log from Unity: ", logText);
                 typeOfLogText = "ErrorLog";
             break;
 
