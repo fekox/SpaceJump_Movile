@@ -480,24 +480,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 775889356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7e995debcf8914ead78f9bc8590f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 28bf35f058ee7ee47aef7c77f8f5ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName:
   - Menu
-  popUpManager: {fileID: 0}
-  skinImage: []
-  shop: {fileID: 0}
-  popUp: {fileID: 0}
-  menuButton: {fileID: 0}
-  cantBuyButton: {fileID: 0}
-  buySystem: {fileID: 0}
-  buttonData: {fileID: 0}
-  disableIntems: []
-  starsCounterManager: {fileID: 0}
-  X2Text: {fileID: 0}
-  plus50MText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &813063862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,8 +1633,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 775889362}
-        m_TargetAssemblyTypeName: ShopMenuButtons, Assembly-CSharp
-        m_MethodName: ReturnMenu
+        m_TargetAssemblyTypeName: PluginButtons, Assembly-CSharp
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

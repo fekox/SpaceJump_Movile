@@ -1,9 +1,10 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.UI;
 
 public class TextPlugin : MonoBehaviour
 {
@@ -40,46 +41,40 @@ public class TextPlugin : MonoBehaviour
         }
     }
 
-    private void SendLogToAndroid(string logsString, string stackTrace, LogType type)
+    public void ReadAllSaveLogs() 
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            switch (type)
+            string logsFile = _pluginInstance.Call<string>("ReadFile");
+            string[] fileLine = logsFile.Split(new [] {"\n", "\r\n"}, System.StringSplitOptions.None);
+
+            if (logsList.Capacity > 0)
             {
-                case LogType.Error:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 2);
-                    break;
-                case LogType.Warning:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 1);
-                    break;
-                case LogType.Log:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 0);
-                    break;
+                foreach (GameObject logs in logsList) 
+                {
+                    Destroy(logs);
+                }
+            }
+
+            logsList.Clear();
+
+            foreach (string logLines in fileLine) 
+            {
+                GameObject text = Instantiate(textPrefab, textParentTransform);
+                TextMeshProUGUI textUGUI = text.GetComponent<TextMeshProUGUI>();
+                textUGUI.text = logLines;
+                logsList.Add(text);
             }
         }
     }
 
-    public void ReadAllSaveLogs() 
+    public void DeleteAllLogs()
     {
-        string logsFile = _pluginInstance.Call<string>("ReadFile");
-        string[] fileLine = logsFile.Split(new [] {"\n", "\r\n"}, System.StringSplitOptions.None);
+        Debug.Log("ShowAlert()");
 
-        if (logsList.Capacity > 0)
+        if (Application.platform == RuntimePlatform.Android)
         {
-            foreach (GameObject logs in logsList) 
-            {
-                Destroy(logs);
-            }
-        }
-
-        logsList.Clear();
-
-        foreach (string logLines in fileLine) 
-        {
-            GameObject text = Instantiate(textPrefab, textParentTransform);
-            TextMeshProUGUI textUGUI = text.GetComponent<TextMeshProUGUI>();
-            textUGUI.text = logLines;
-            logsList.Add(text);
+            _pluginInstance.Call("ShowAlert");
         }
     }
 }
