@@ -13,12 +13,12 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            jump.StartJump();
+            jump.ExecutePlayerjumpCommand();
         }
 
         if (Input.GetMouseButton(0) && !jump.isGrounded)
         {
-            move.StartMoveTouch();
+            move.ExecutePlayerMoveCommand();
         }
     }
 }

@@ -18,9 +18,12 @@ public class PlayerJump : MonoBehaviour
 
     public event Action<bool> onPlayerJumpChange;
 
+    private InterfaceCommand jumpCommand;
+
     private void Start()
     {
         CheckJumpForce();
+        jumpCommand = new JumpCommand(this);
     }
 
     public void StartJump() 
@@ -55,5 +58,10 @@ public class PlayerJump : MonoBehaviour
         {
             jumpForce = jumpForceMovile;
         }
+    }
+
+    public void ExecutePlayerjumpCommand()
+    {
+        jumpCommand.Execute();
     }
 }

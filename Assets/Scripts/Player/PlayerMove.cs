@@ -26,10 +26,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private StarsCounterManager starsCounterManager;
     [SerializeField] private ButtonData buttonData;
 
+    private InterfaceCommand moveCommand;
+
     private void Start()
     {
         CheckSpeed();
         rb = GetComponent<Rigidbody2D>();
+        moveCommand = new MoveCommand(this);
     }
 
     public void CheckMousePos() 
@@ -99,5 +102,10 @@ public class PlayerMove : MonoBehaviour
         {
             currenSpeed = speedMovile;
         }
+    }
+
+    public void ExecutePlayerMoveCommand() 
+    {
+        moveCommand.Execute();
     }
 }
