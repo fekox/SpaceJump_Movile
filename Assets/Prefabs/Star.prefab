@@ -176,4 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starSpeed: 8
+  maxStarPosY: 3
+  minStarPosY: 0
   playerTag: Player

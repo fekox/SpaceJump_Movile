@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StarSpawner : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject star;
+    public Star star;
 
     private float maxStarPosY = 3f;
     private float minStarPosY = 0f;
@@ -14,6 +15,9 @@ public class StarSpawner : MonoBehaviour
     {
         float starPosY = Random.Range(maxStarPosY, minStarPosY);
         transform.position = new Vector3(transform.position.x, starPosY, 0f);
-        GameObject newStar = Instantiate(star, transform.position, transform.rotation);
+        
+        Star newStar = Instantiate(star);
+        Star starClone = (StarMovement)newStar.Clone();
+        starClone.transform.position = new Vector3(transform.position.x, starPosY, 0f);
     }
 }
