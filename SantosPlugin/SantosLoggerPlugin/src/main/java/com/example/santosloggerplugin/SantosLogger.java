@@ -49,7 +49,7 @@ public class SantosLogger
         Log.v(LOGTAG, "Get from plugin");
 
         alertCallback.onRunPlugin(LOGTAG);
-        return LOGTAG;
+        return "Plugin name: " + LOGTAG;
     }
 
     public void AddLogInList(String logText)

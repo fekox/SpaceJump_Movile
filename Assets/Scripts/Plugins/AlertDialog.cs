@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class AlertDialog : MonoBehaviour
 {
+#if UNITY_ANDROID
+
     private const string packageName = "com.example.santosloggerplugin";
 
     private const string className = ".SantosLogger";
 
-#if UNITY_ANDROID
-
     AndroidJavaClass unityClass;
     AndroidJavaObject unityActivity;
     AndroidJavaObject pluginInstance;
-
+#endif
     void Start()
     {
         InitializePlugin(packageName + className);
@@ -33,7 +34,7 @@ public class AlertDialog : MonoBehaviour
             Debug.Log("Plugin Instance Null");
             return;
         }
-        pluginInstance.CallStatic("setUnityActivity", unityActivity);
+        pluginInstance.CallStatic("SetUnityActivity", unityActivity);
     }
     void CreateAlert()
     {
@@ -48,7 +49,6 @@ public class AlertDialog : MonoBehaviour
 
         pluginInstance.Call("ShowAlert");
     }
-#endif
 }
 
 class AndroidPluginCallback : AndroidJavaProxy 

@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class CreateFile : MonoBehaviour
 {
-    [SerializeField] private const string packageName = "com.example.santosloggerplugin";
-
-    [SerializeField] private const string className = ".SantosLogger";
-
 #if UNITY_ANDROID
+    private const string packageName = "com.example.santosloggerplugin";
+
+    private const string className = ".SantosLogger";
+
     AndroidJavaClass unityClass;
     AndroidJavaObject unityActivity;
     AndroidJavaObject pluginInstance;
+#endif
 
     private void Start()
     {
@@ -30,14 +32,13 @@ public class CreateFile : MonoBehaviour
             Debug.Log("Plugin Instance Null");
             return;
         }
-        pluginInstance.CallStatic("setUnityActivity", unityActivity);
+        pluginInstance.CallStatic("SetUnityActivity", unityActivity);
     }
 
-    public void createFile()
+    public void CreateLogsFile()
     {
-        Debug.Log("createFile()");
+        Debug.Log("CreateFile()");
 
         pluginInstance.Call("SaveLogsToFile");
     }
-#endif
 }
