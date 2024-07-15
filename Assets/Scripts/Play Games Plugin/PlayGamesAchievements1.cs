@@ -11,8 +11,6 @@ public class PlayGamesAchievements1 : MonoBehaviour
 {
     public static PlayGamesAchievements1 instance;
 
-    static bool active = false;
-
     private void Awake()
     {
         instance = this;
@@ -33,7 +31,13 @@ public class PlayGamesAchievements1 : MonoBehaviour
 #if UNITY_ANDROID
         if (Social.localUser.authenticated)
         {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAQ", 100f, success => { });
+            Social.ReportProgress("CgkI7aPZp4cCEAIQAQ", 100f, success => 
+            {
+                if (success) 
+                {
+                    Social.ShowAchievementsUI();
+                }
+            });
         }
 #endif
     }
@@ -43,7 +47,13 @@ public class PlayGamesAchievements1 : MonoBehaviour
 #if UNITY_ANDROID
         if (Social.localUser.authenticated)
         {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAg", 100f, success => { });
+            Social.ReportProgress("CgkI7aPZp4cCEAIQAg", 100f, success => 
+            {
+                if (success)
+                {
+                    Social.ShowAchievementsUI();
+                }
+            });
         }
 #endif
     }
@@ -53,7 +63,13 @@ public class PlayGamesAchievements1 : MonoBehaviour
 #if UNITY_ANDROID
         if (Social.localUser.authenticated)
         {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAw", 100f, success => { });
+            Social.ReportProgress("CgkI7aPZp4cCEAIQAw", 100f, success => 
+            {
+                if (success)
+                {
+                    Social.ShowAchievementsUI();
+                }
+            });
         }
 #endif
     }
