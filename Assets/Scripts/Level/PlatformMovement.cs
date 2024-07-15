@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [Header("Random Platform Position Y")]
-    [SerializeField] float minPlatformPositionY;
-    [SerializeField] float maxPlatformPositionY;
+    [SerializeField] float minPosY;
+    [SerializeField] float maxPosY;
 
     [Header("Setup")]
     private float platformPosY;
@@ -20,6 +20,13 @@ public class PlatformMovement : MonoBehaviour
 
     public GameObject platformCollider;
 
+    private float aspect_1 = 4.0f / 3.0f;
+    private float aspect_2 = 16.0f / 9.0f;
+    private float aspect_3 = 20.0f / 9.0f;
+
+    private float currentAspect = (float)Screen.width / (float)Screen.height;
+    private float aspectRatioTolerance = 0.01f;
+
     public void PlatformMove() 
     {
         float speedX = moveSpeed * Time.deltaTime;
@@ -28,7 +35,7 @@ public class PlatformMovement : MonoBehaviour
 
     public void SetPlatformPosition(float posX) 
     {
-        platformPosY = Random.Range(minPlatformPositionY, maxPlatformPositionY);
+        platformPosY = Random.Range(minPosY, maxPosY);
         transform.position = new Vector3(posX, (int)platformPosY, 0f);
     }
     
@@ -36,7 +43,22 @@ public class PlatformMovement : MonoBehaviour
     {
         if (transform.position.x <= platformCollider.transform.position.x)
         {
-            SetPlatformPosition(platformPosX);
+            if (Mathf.Abs(currentAspect - aspect_1) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(9.3f);
+            }
+
+            if (Mathf.Abs(currentAspect - aspect_2) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+
+            }
+
+            if (Mathf.Abs(currentAspect - aspect_3) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
             MultiplyScore();
         }
     }
