@@ -8,9 +8,15 @@ public class PluginToMovile : MonoBehaviour
 #if UNITY_ANDROID
     private const string packageName = "com.example.santosloggerplugin";
     private const string className = ".SantosLogger";
+
+    private List<GameObject> logsList = new List<GameObject>();
     private AndroidJavaClass _pluginClass;
     public AndroidJavaObject _pluginInstance { get; private set; }
     private AndroidJavaObject _unityActivity;
+
+    public TextMeshProUGUI plugin;
+    public GameObject textPrefab;
+    public Transform textParentTransform;
 
     private const string permission = "android.permission.WRITE_EXTERNAL_STORAGE";
 #endif
@@ -25,7 +31,6 @@ public class PluginToMovile : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);
         }
     }
 
@@ -49,6 +54,20 @@ public class PluginToMovile : MonoBehaviour
             }
 
             _pluginInstance.Call("CreateAlert", new AndroidPluginCallback());
+
+            RunPlugin();
+        }
+    }
+
+    public void RunPlugin()
+    {
+        Debug.Log("RunPlugin()");
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            plugin.text = _pluginInstance.Call<string>("GetLogtag", new AndroidPluginCallback());
+
+            Application.logMessageReceived += SendLogToAndroid;
         }
     }
 
@@ -59,21 +78,66 @@ public class PluginToMovile : MonoBehaviour
             switch (type)
             {
                 case LogType.Error:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 2);
+                    _pluginInstance.Call("SendLog", 2, logsString);
                     break;
-                case LogType.Assert:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString);
-                    break;
+
                 case LogType.Warning:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 1);
+                    _pluginInstance.Call("SendLog", 1, logsString);
                     break;
+
                 case LogType.Log:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 0);
+                    _pluginInstance.Call("SendLog", 0, logsString);
                     break;
+
                 case LogType.Exception:
-                    _pluginInstance.Call("SendPerTypeOfLog", logsString, 3);
+                    _pluginInstance.Call("SendLog", 3, logsString);
                     break;
             }
+        }
+    }
+
+    public void ReadAllSaveLogs()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            string logsFile = _pluginInstance.Call<string>("ReadFile");
+
+            Debug.Log("LogFile:" + logsFile);
+
+            string[] fileLine = logsFile.Split(new[] { "\n", "\r\n" }, System.StringSplitOptions.None);
+
+            if (logsList.Capacity > 0)
+            {
+                foreach (GameObject logs in logsList)
+                {
+                    Destroy(logs);
+                }
+            }
+
+            logsList.Clear();
+
+            foreach (string logLines in fileLine)
+            {
+                GameObject text = Instantiate(textPrefab, textParentTransform);
+                TextMeshProUGUI textUGUI = text.GetComponent<TextMeshProUGUI>();
+                textUGUI.text = logLines;
+                logsList.Add(text);
+            }
+        }
+    }
+
+    public void TestLog()
+    {
+        Debug.Log("UnityLog: TestLog");
+    }
+
+    public void DeleteAllLogs()
+    {
+        Debug.Log("ShowAlert()");
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            _pluginInstance.Call("ShowAlert");
         }
     }
 
