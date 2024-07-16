@@ -20,9 +20,14 @@ public class PlatformMovement : MonoBehaviour
 
     public GameObject platformCollider;
 
-    private float aspect_1 = 4.0f / 3.0f;
-    private float aspect_2 = 16.0f / 9.0f;
-    private float aspect_3 = 20.0f / 9.0f;
+    private float fourThirds = 4.0f / 3.0f;
+    private float sixteenNinths = 16.0f / 9.0f;
+    private float eighteenNinths = 18.0f / 9.0f;
+    private float nineteenNinths = 19.0f / 9.0f;
+    private float twentyNinths = 20.0f / 9.0f;
+    private float twentyOneNinths = 21.0f / 9.0f;
+    private float twentyTwoNinths = 22.0f / 9.0f;
+    private float twentyThreeNinths = 23.0f / 9.0f;
 
     private float currentAspect = (float)Screen.width / (float)Screen.height;
     private float aspectRatioTolerance = 0.01f;
@@ -43,20 +48,44 @@ public class PlatformMovement : MonoBehaviour
     {
         if (transform.position.x <= platformCollider.transform.position.x)
         {
-            if (Mathf.Abs(currentAspect - aspect_1) < aspectRatioTolerance)
+            if (Mathf.Abs(currentAspect - fourThirds) < aspectRatioTolerance)
             {
                 platformPosX = 9.3f;
 
                 SetPlatformPosition(platformPosX);
             }
 
-            if (Mathf.Abs(currentAspect - aspect_2) < aspectRatioTolerance)
+            if (Mathf.Abs(currentAspect - sixteenNinths) < aspectRatioTolerance)
             {
                 SetPlatformPosition(platformPosX);
-
             }
 
-            if (Mathf.Abs(currentAspect - aspect_3) < aspectRatioTolerance)
+            if (Mathf.Abs(currentAspect - eighteenNinths) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
+            if (Mathf.Abs(currentAspect - nineteenNinths) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
+            if (Mathf.Abs(currentAspect - twentyNinths) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
+            if (Mathf.Abs(currentAspect - twentyOneNinths) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
+            if (Mathf.Abs(currentAspect - twentyTwoNinths) < aspectRatioTolerance)
+            {
+                SetPlatformPosition(platformPosX);
+            }
+
+            if (Mathf.Abs(currentAspect - twentyThreeNinths) < aspectRatioTolerance)
             {
                 SetPlatformPosition(platformPosX);
             }
