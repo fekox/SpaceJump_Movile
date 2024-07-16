@@ -45,7 +45,9 @@ public class PlatformMovement : MonoBehaviour
         {
             if (Mathf.Abs(currentAspect - aspect_1) < aspectRatioTolerance)
             {
-                SetPlatformPosition(9.3f);
+                platformPosX = 9.3f;
+
+                SetPlatformPosition(platformPosX);
             }
 
             if (Mathf.Abs(currentAspect - aspect_2) < aspectRatioTolerance)
