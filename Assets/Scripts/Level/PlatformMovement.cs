@@ -48,47 +48,9 @@ public class PlatformMovement : MonoBehaviour
     {
         if (transform.position.x <= platformCollider.transform.position.x)
         {
-            if (Mathf.Abs(currentAspect - fourThirds) < aspectRatioTolerance)
-            {
-                platformPosX = 9.3f;
+            platformPosX = 9.3f;
 
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - sixteenNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - eighteenNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - nineteenNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - twentyNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - twentyOneNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - twentyTwoNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
-
-            if (Mathf.Abs(currentAspect - twentyThreeNinths) < aspectRatioTolerance)
-            {
-                SetPlatformPosition(platformPosX);
-            }
+            SetPlatformPosition(platformPosX);
 
             MultiplyScore();
         }

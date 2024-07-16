@@ -9,6 +9,7 @@ public class GameManger : MonoBehaviour
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private TutorialManager tutorialManager;
     [SerializeField] private ButtonData buttonData;
+    [SerializeField] private CameraResolution cameraResolution;
 
     [Header("Player")]
     [SerializeField] private PlayerMove playerMove;
@@ -66,6 +67,7 @@ public class GameManger : MonoBehaviour
     {
         if(selecCharacter == true) 
         {
+            cameraResolution.CheckCameraResolution();
             tutorialManager.AddTaps(1);
             tutorialManager.CheckTaps();
         }

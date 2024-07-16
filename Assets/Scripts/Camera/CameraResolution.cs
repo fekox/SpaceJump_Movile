@@ -20,7 +20,7 @@ public class CameraResolution : MonoBehaviour
     private float currentAspect = (float)Screen.width / (float)Screen.height;
     private float aspectRatioTolerance = 0.01f;
 
-    void Start()
+    public void CheckCameraResolution() 
     {
         if (Mathf.Abs(currentAspect - fourThirds) < aspectRatioTolerance)
         {
@@ -51,7 +51,7 @@ public class CameraResolution : MonoBehaviour
             platforms[0].transform.position = new Vector3(-9.3f, -5f, 0f);
             platforms[2].transform.position = new Vector3(9.3f, -5f, 0f);
 
-            platformCollider.transform.position = new Vector3(-15.25f, -4f, 0f);
+            platformCollider.transform.position = new Vector3(-16.25f, -4f, 0f);
         }
 
         if (Mathf.Abs(currentAspect - twentyNinths) < aspectRatioTolerance)
@@ -59,7 +59,7 @@ public class CameraResolution : MonoBehaviour
             platforms[0].transform.position = new Vector3(-9.3f, -5f, 0f);
             platforms[2].transform.position = new Vector3(9.3f, -5f, 0f);
 
-            platformCollider.transform.position = new Vector3(-15.25f, -4f, 0f);
+            platformCollider.transform.position = new Vector3(-16.25f, -4f, 0f);
         }
 
         if (Mathf.Abs(currentAspect - twentyOneNinths) < aspectRatioTolerance)
@@ -67,7 +67,7 @@ public class CameraResolution : MonoBehaviour
             platforms[0].transform.position = new Vector3(-9.3f, -5f, 0f);
             platforms[2].transform.position = new Vector3(9.3f, -5f, 0f);
 
-            platformCollider.transform.position = new Vector3(-15.25f, -4f, 0f);
+            platformCollider.transform.position = new Vector3(-16.25f, -4f, 0f);
         }
 
         if (Mathf.Abs(currentAspect - twentyTwoNinths) < aspectRatioTolerance)
@@ -75,7 +75,7 @@ public class CameraResolution : MonoBehaviour
             platforms[0].transform.position = new Vector3(-9.3f, -5f, 0f);
             platforms[2].transform.position = new Vector3(9.3f, -5f, 0f);
 
-            platformCollider.transform.position = new Vector3(-15.25f, -4f, 0f);
+            platformCollider.transform.position = new Vector3(-16.25f, -4f, 0f);
         }
 
         if (Mathf.Abs(currentAspect - twentyThreeNinths) < aspectRatioTolerance)
@@ -83,7 +83,7 @@ public class CameraResolution : MonoBehaviour
             platforms[0].transform.position = new Vector3(-9.3f, -5f, 0f);
             platforms[2].transform.position = new Vector3(9.3f, -5f, 0f);
 
-            platformCollider.transform.position = new Vector3(-15.25f, -4f, 0f);
+            platformCollider.transform.position = new Vector3(-16.25f, -4f, 0f);
         }
     }
 }
