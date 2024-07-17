@@ -6,71 +6,43 @@ using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using UnityEngine.SocialPlatforms;
 using System;
-    
+
 public class PlayGamesAchievements1 : MonoBehaviour
 {
-    public static PlayGamesAchievements1 instance;
+    #region ACHIEVEMENTS
 
-    private void Awake()
+    public void Get10Points()
     {
-        instance = this;
-    }
-
-    public void ShowAchievements1() 
-    {
-#if UNITY_ANDROID
-        if (Social.localUser.authenticated) 
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_beginer, 100f, success =>
         {
-            Social.ShowAchievementsUI();
-        }
-#endif
-    }
-
-    public void Get10Points() 
-    {
-#if UNITY_ANDROID
-        if (Social.localUser.authenticated)
-        {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAQ", 100f, success => 
+            if (success)
             {
-                if (success) 
-                {
-                    Social.ShowAchievementsUI();
-                }
-            });
-        }
-#endif
+                PlayGamesPlatform.Instance.ShowAchievementsUI();
+            }
+        });
     }
 
     public void Get50Points()
     {
-#if UNITY_ANDROID
-        if (Social.localUser.authenticated)
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jumper, 100f, success =>
         {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAg", 100f, success => 
+            if (success)
             {
-                if (success)
-                {
-                    Social.ShowAchievementsUI();
-                }
-            });
-        }
-#endif
+                PlayGamesPlatform.Instance.ShowAchievementsUI();
+            }
+        });
     }
 
     public void Get100Points()
     {
-#if UNITY_ANDROID
-        if (Social.localUser.authenticated)
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jump_legend, 100f, success =>
         {
-            Social.ReportProgress("CgkI7aPZp4cCEAIQAw", 100f, success => 
+            if (success)
             {
-                if (success)
-                {
-                    Social.ShowAchievementsUI();
-                }
-            });
-        }
-#endif
+                PlayGamesPlatform.Instance.ShowAchievementsUI();
+            }
+        });
     }
+
+#endregion
 }

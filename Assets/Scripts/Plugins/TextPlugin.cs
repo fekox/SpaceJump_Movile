@@ -25,7 +25,7 @@ public class TextPlugin : MonoBehaviour
 
     void Start()
     {
-        if(Application.platform == RuntimePlatform.Android) 
+        if (Application.platform == RuntimePlatform.Android)
         {
             _pluginClass = new AndroidJavaClass(packageName + className);
             _pluginInstance = _pluginClass.CallStatic<AndroidJavaObject>("GetInstance");
@@ -46,16 +46,16 @@ public class TextPlugin : MonoBehaviour
         }
     }
 
-    public void ReadAllSaveLogs() 
+    public void ReadAllSaveLogs()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
             string logsFile = _pluginInstance.Call<string>("ReadFile");
-            string[] fileLine = logsFile.Split(new [] {"\n", "\r\n"}, System.StringSplitOptions.None);
+            string[] fileLine = logsFile.Split(new[] { "\n", "\r\n" }, System.StringSplitOptions.None);
 
             if (logsList.Capacity > 0)
             {
-                foreach (GameObject logs in logsList) 
+                foreach (GameObject logs in logsList)
                 {
                     Destroy(logs);
                 }
@@ -63,7 +63,7 @@ public class TextPlugin : MonoBehaviour
 
             logsList.Clear();
 
-            foreach (string logLines in fileLine) 
+            foreach (string logLines in fileLine)
             {
                 GameObject text = Instantiate(textPrefab, textParentTransform);
                 TextMeshProUGUI textUGUI = text.GetComponent<TextMeshProUGUI>();
@@ -99,7 +99,7 @@ public class TextPlugin : MonoBehaviour
         }
     }
 
-    public void TestLog() 
+    public void TestLog()
     {
         Debug.Log("UnityLog: TestLog");
     }
