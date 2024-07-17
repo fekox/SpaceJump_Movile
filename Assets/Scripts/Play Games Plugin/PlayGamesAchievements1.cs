@@ -13,35 +13,17 @@ public class PlayGamesAchievements1 : MonoBehaviour
 
     public void Get10Points()
     {
-        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_beginer, 100f, success =>
-        {
-            if (success)
-            {
-                PlayGamesPlatform.Instance.ShowAchievementsUI();
-            }
-        });
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_beginer, 100f, success => {});
     }
 
     public void Get50Points()
     {
-        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jumper, 100f, success =>
-        {
-            if (success)
-            {
-                PlayGamesPlatform.Instance.ShowAchievementsUI();
-            }
-        });
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jumper, 100f, success => {});
     }
 
     public void Get100Points()
     {
-        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jump_legend, 100f, success =>
-        {
-            if (success)
-            {
-                PlayGamesPlatform.Instance.ShowAchievementsUI();
-            }
-        });
+        PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_jump_legend, 100f, success => {});
     }
 
 #endregion
