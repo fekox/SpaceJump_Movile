@@ -1,34 +1,18 @@
 package com.example.santosloggerplugin;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 
-import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 import java.io.FileWriter;
-
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.util.Log;
-import android.content.pm.PackageManager;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.motion.widget.Debug;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 public class SantosLogger
 {
@@ -76,9 +60,9 @@ public class SantosLogger
         SaveLogsInToFile();
     }
 
-    public void SendLog(int logType, String logText)
+    public void SendPerTypeOfLog(int logType, String logText)
     {
-        String typeOfLogText = "Empty:";
+        String typeOfLogText = "Empty";
         TypeOfLog typeOfLog = TypeOfLog.values()[logType];
 
         switch (typeOfLog)
@@ -88,7 +72,7 @@ public class SantosLogger
                 typeOfLogText = "DebugLog";
             break;
 
-            case WarningLog:
+            case  WarningLog:
                 Log.w("Log from Unity: ", logText);
                 typeOfLogText = "WarningLog";
             break;
@@ -200,7 +184,7 @@ public class SantosLogger
         }
     }
 
-    public String ReadFile()
+    private String ReadFile()
     {
         Context context = unityActivity.getApplicationContext();
         File logsFile = new File(context.getExternalFilesDir(null), "Santos_Logs_File.txt");

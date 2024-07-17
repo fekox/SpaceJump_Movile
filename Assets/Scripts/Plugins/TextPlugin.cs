@@ -2,11 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
-using UnityEngine.Diagnostics;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class TextPlugin : MonoBehaviour
@@ -41,8 +38,6 @@ public class TextPlugin : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             plugin.text = _pluginInstance.Call<string>("GetLogtag", new AndroidPluginCallback());
-
-            Application.logMessageReceived += SendLogToAndroid;
         }
     }
 
@@ -73,37 +68,6 @@ public class TextPlugin : MonoBehaviour
         }
     }
 
-    private void SendLogToAndroid(string logString, string stackTrace, LogType type)
-    {
-
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            switch (type)
-            {
-                case LogType.Error:
-                    _pluginInstance.Call("SendLog", 2, logString);
-                    break;
-
-                case LogType.Warning:
-                    _pluginInstance.Call("SendLog", 1, logString);
-                    break;
-
-                case LogType.Log:
-                    _pluginInstance.Call("SendLog", 0, logString);
-                    break;
-
-                case LogType.Exception:
-                    _pluginInstance.Call("SendLog", 3, logString);
-                    break;
-            }
-        }
-    }
-
-    public void TestLog() 
-    {
-        Debug.Log("UnityLog: TestLog");
-    }
-
     public void DeleteAllLogs()
     {
         Debug.Log("ShowAlert()");
@@ -112,10 +76,5 @@ public class TextPlugin : MonoBehaviour
         {
             _pluginInstance.Call("ShowAlert");
         }
-    }
-
-    private void OnDestroy()
-    {
-        Application.logMessageReceived -= SendLogToAndroid;
     }
 }
