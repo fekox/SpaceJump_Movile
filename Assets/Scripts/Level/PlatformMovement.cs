@@ -20,18 +20,6 @@ public class PlatformMovement : MonoBehaviour
 
     public GameObject platformCollider;
 
-    private float fourThirds = 4.0f / 3.0f;
-    private float sixteenNinths = 16.0f / 9.0f;
-    private float eighteenNinths = 18.0f / 9.0f;
-    private float nineteenNinths = 19.0f / 9.0f;
-    private float twentyNinths = 20.0f / 9.0f;
-    private float twentyOneNinths = 21.0f / 9.0f;
-    private float twentyTwoNinths = 22.0f / 9.0f;
-    private float twentyThreeNinths = 23.0f / 9.0f;
-
-    private float currentAspect = (float)Screen.width / (float)Screen.height;
-    private float aspectRatioTolerance = 0.01f;
-
     public void PlatformMove() 
     {
         float speedX = moveSpeed * Time.deltaTime;

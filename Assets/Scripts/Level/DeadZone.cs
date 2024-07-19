@@ -11,12 +11,25 @@ public class DeadZone : MonoBehaviour
     [Header("References")]
     [SerializeField] private LoadLevel loadLevel;
     [SerializeField] private StarsCounterManager starsCounterManager;
+    [SerializeField] private InterstitialAd interstitialAd;
+
+    private bool isAdLoad = false;
+    private void Update()
+    {
+        if (!isAdLoad) 
+        {
+            interstitialAd.LoadAd();
+            isAdLoad = true;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
             VibrateCellPhone();
+            interstitialAd.ShowAd();
+            isAdLoad = false;
             loadLevel.LoadScene();
         }
     }

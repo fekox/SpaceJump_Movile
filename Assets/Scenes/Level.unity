@@ -962,6 +962,8 @@ GameObject:
   - component: {fileID: 377569192}
   - component: {fileID: 377569194}
   - component: {fileID: 377569195}
+  - component: {fileID: 377569196}
+  - component: {fileID: 377569197}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1047,6 +1049,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b1d359999fb6e4a8390e4c0723cd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &377569196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377569191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db52a8b400f95f04b96ba879dd4a12f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 5660267
+  _testMode: 1
+--- !u!114 &377569197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377569191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa42dc9d34915a549a04baab39601b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidAdUnitId: Interstitial_Android
+  _iOsAdUnitId: Interstitial_iOS
 --- !u!1 &398268620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,6 +4010,7 @@ MonoBehaviour:
   playerTagName: Player
   loadLevel: {fileID: 1129880446}
   starsCounterManager: {fileID: 1152434218}
+  interstitialAd: {fileID: 377569197}
 --- !u!1 &1205255372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6116,6 +6147,10 @@ PrefabInstance:
       propertyPath: loadLevel
       value: 
       objectReference: {fileID: 1129880446}
+    - target: {fileID: 4648795135194525682, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
+      propertyPath: interstitialAd
+      value: 
+      objectReference: {fileID: 377569197}
     - target: {fileID: 4648795135194525682, guid: 0190cf14023cde747ab23c0071070f1d, type: 3}
       propertyPath: starsCounterManager
       value: 
