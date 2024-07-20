@@ -277,6 +277,7 @@ public class ShopMenuButtons : MonoBehaviour
     {
         adPopup.SetActive(false);
         starsCounterManager.starsScore += 15;
+        starsCounterManager.SaveStarsScore();
         rewardedAdManager.PlayRewardedAd();
     }
 }
