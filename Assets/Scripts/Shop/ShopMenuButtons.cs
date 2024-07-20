@@ -17,6 +17,10 @@ public class ShopMenuButtons : MonoBehaviour
     [SerializeField] private GameObject menuButton;
     [SerializeField] private GameObject cantBuyButton;
 
+    [Header("Ad References")]
+    [SerializeField] private GameObject adPopup;
+    [SerializeField] private RewardedAdManager rewardedAdManager;
+
     [Header("Shop System")]
     [SerializeField] private BuySystem buySystem;
 
@@ -257,5 +261,22 @@ public class ShopMenuButtons : MonoBehaviour
     public void PopUpCantBuyExit()
     {
         cantBuyButton.SetActive(false);
+    }
+
+    public void ShowAdsPopup() 
+    {
+        adPopup.SetActive(true);
+    }
+
+    public void HideAdsPopup() 
+    {
+        adPopup.SetActive(false);
+    }
+
+    public void GetRewarded() 
+    {
+        adPopup.SetActive(false);
+        starsCounterManager.starsScore += 15;
+        rewardedAdManager.PlayRewardedAd();
     }
 }
