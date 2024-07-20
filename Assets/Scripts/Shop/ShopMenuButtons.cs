@@ -16,6 +16,7 @@ public class ShopMenuButtons : MonoBehaviour
     [SerializeField] private GameObject popUp;
     [SerializeField] private GameObject menuButton;
     [SerializeField] private GameObject cantBuyButton;
+    [SerializeField] private GameObject AdButton;
 
     [Header("Ad References")]
     [SerializeField] private GameObject adPopup;
@@ -67,6 +68,7 @@ public class ShopMenuButtons : MonoBehaviour
         plus50MText.SetActive(false);
         menuButton.SetActive(false);
         shop.SetActive(false);
+        AdButton.SetActive(false);
         popUp.SetActive(true);
     }
 
@@ -80,6 +82,7 @@ public class ShopMenuButtons : MonoBehaviour
         plus50MText.SetActive(false);
         menuButton.SetActive(false);
         shop.SetActive(false);
+        AdButton.SetActive(false);
         popUp.SetActive(true);
     }
 
@@ -93,6 +96,7 @@ public class ShopMenuButtons : MonoBehaviour
         plus50MText.SetActive(false);
         menuButton.SetActive(false);
         shop.SetActive(false);
+        AdButton.SetActive(false);
         popUp.SetActive(true);
     }
 
@@ -105,6 +109,7 @@ public class ShopMenuButtons : MonoBehaviour
         plus50MText.SetActive(false);
         menuButton.SetActive(false);
         shop.SetActive(false);
+        AdButton.SetActive(false);
         popUp.SetActive(true);
     }
 
@@ -117,6 +122,7 @@ public class ShopMenuButtons : MonoBehaviour
         plus50MText.SetActive(true);
         menuButton.SetActive(false);
         shop.SetActive(false);
+        AdButton.SetActive(false);
         popUp.SetActive(true);
     }
 
@@ -256,6 +262,7 @@ public class ShopMenuButtons : MonoBehaviour
         cantBuyButton.SetActive(false);
         menuButton.SetActive(true);
         shop.SetActive(true);
+        AdButton.SetActive(true);
     }
 
     public void PopUpCantBuyExit()
