@@ -42,6 +42,7 @@ public class SelectCharacterButtons : MonoBehaviour
 
     public void SelectVirtualBoySkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         playerSkins[0].SetActive(true);
         selectCharacterPopup.SetActive(false);
         tutorialPopup.SetActive(true);
@@ -50,6 +51,7 @@ public class SelectCharacterButtons : MonoBehaviour
 
     public void SelectPinkManSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         playerSkins[1].SetActive(true);
         selectCharacterPopup.SetActive(false);
         tutorialPopup.SetActive(true);
@@ -58,6 +60,7 @@ public class SelectCharacterButtons : MonoBehaviour
 
     public void SelectNinjaFrogSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         playerSkins[2].SetActive(true);
         selectCharacterPopup.SetActive(false);
         tutorialPopup.SetActive(true);
@@ -66,6 +69,7 @@ public class SelectCharacterButtons : MonoBehaviour
 
     public void SelectMaskDudeSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         playerSkins[3].SetActive(true);
         selectCharacterPopup.SetActive(false);
         tutorialPopup.SetActive(true);

@@ -98,6 +98,7 @@ public class PluginToMovile : MonoBehaviour
 
     public void ReadAllSaveLogs()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         if (Application.platform == RuntimePlatform.Android)
         {
             string logsFile = _pluginInstance.Call<string>("ReadFile");
@@ -133,6 +134,7 @@ public class PluginToMovile : MonoBehaviour
 
     public void DeleteAllLogs()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         Debug.Log("ShowAlert()");
 
         if (Application.platform == RuntimePlatform.Android)

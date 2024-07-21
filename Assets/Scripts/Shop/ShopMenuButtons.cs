@@ -58,11 +58,13 @@ public class ShopMenuButtons : MonoBehaviour
     }
     public void ReturnMenu()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         SceneManager.LoadScene(sceneName[0]);
     }
 
     public void ShowPinkManSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         itemId = 1;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[0]);
@@ -77,6 +79,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowNinjaFrogSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         itemId = 2;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[1]);
@@ -91,6 +94,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowMaskDudeSkin() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         itemId = 3;
         priceText.text = priceSkinTextValue;
         popUpManager.SetSkinImage(skinImage[2]);
@@ -105,6 +109,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowX2PowerUp() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         itemId = 4;
         popUpManager.CheckPowerUp();
         priceText.text = pricePowerUpTextValue;
@@ -118,6 +123,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void ShowPlusMetersPowerUp() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         itemId = 5;
         popUpManager.CheckPowerUp();
         priceText.text = pricePowerUpTextValue;
@@ -146,6 +152,7 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void PopUpBuy() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         switch (itemId)
         {
             case 1:
@@ -266,6 +273,7 @@ public class ShopMenuButtons : MonoBehaviour
     }
     public void PopUpExit() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         popUp.SetActive(false);
         cantBuyButton.SetActive(false);
         menuButton.SetActive(true);
@@ -275,21 +283,25 @@ public class ShopMenuButtons : MonoBehaviour
 
     public void PopUpCantBuyExit()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         cantBuyButton.SetActive(false);
     }
 
     public void ShowAdsPopup() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         adPopup.SetActive(true);
     }
 
     public void HideAdsPopup() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         adPopup.SetActive(false);
     }
 
     public void GetRewarded() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         adPopup.SetActive(false);
         starsCounterManager.starsScore += 15;
         starsCounterManager.SaveStarsScore();

@@ -9,6 +9,7 @@ public class PluginButtons : MonoBehaviour
 
     public void LoadMenu() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         SceneManager.LoadScene(sceneName[0]);
     }
 

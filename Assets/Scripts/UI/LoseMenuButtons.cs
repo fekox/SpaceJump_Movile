@@ -9,11 +9,13 @@ public class LoseMenuButtons : MonoBehaviour
 
     public void Restart() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         SceneManager.LoadScene(sceneName[0]);
     }
 
     public void ReturnMenu() 
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         SceneManager.LoadScene(sceneName[1]);
     }
 }

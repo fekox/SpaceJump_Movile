@@ -30,6 +30,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (isGrounded == true) 
         {
+            FindObjectOfType<AudioManager>().Play("PlayerJump");
             StartCoroutine(PlayerJumpAnimation(1));
             rb.AddForce(new Vector2(0, jumpForce));
         }

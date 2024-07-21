@@ -12,6 +12,8 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<AudioManager>().Play("GamePlayMusic");
+
         debugButtons.SetActive(false);
 
 #if UNITY_EDITOR
@@ -21,37 +23,49 @@ public class MainMenuButtons : MonoBehaviour
 
     public void PlayGame()
     {
+        PlayButtonSound();
         SceneManager.LoadScene(sceneName[0]);
     }
 
     public void GoToShop()
     {
+        PlayButtonSound();
         SceneManager.LoadScene(sceneName[1]);
     }
 
     public void GoToCredits() 
     {
+        PlayButtonSound();
         SceneManager.LoadScene(sceneName[2]);
     }
 
     public void GoToCPlugin()
     {
+        PlayButtonSound();
         SceneManager.LoadScene(sceneName[3]);
     }
 
     public void AddStars() 
     {
+        PlayButtonSound();
         starSpawner.AddStars(10);
     }
 
     public void ResetPlayerPrefs() 
     {
+        PlayButtonSound();
         PlayerPrefs.DeleteAll();
         Debug.Log("All PlayerPrefs deleted");
     }
 
     public void ExitGame()
     {
+        PlayButtonSound();
         Application.Quit();
+    }
+
+    public void PlayButtonSound()
+    {
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 }

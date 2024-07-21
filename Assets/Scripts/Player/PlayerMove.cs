@@ -73,6 +73,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(starTag)) 
         {
+            FindObjectOfType<AudioManager>().Play("PickUp");
             Destroy(collision.gameObject);
             MultiplyStars();
         }

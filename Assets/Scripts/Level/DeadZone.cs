@@ -28,6 +28,7 @@ public class DeadZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
+            FindObjectOfType<AudioManager>().Play("PlayerDead");
             analyticsTraker.RecordInterstitialAdImpression();
             VibrateCellPhone();
             interstitialAd.ShowAd();
