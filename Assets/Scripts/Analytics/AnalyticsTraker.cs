@@ -36,16 +36,16 @@ public class AnalyticsTraker : MonoBehaviour
         Debug.Log("Analytics: Show_rewarded_Ad");
     }
 
-    public void RecordStarsUsed(int startsSpent)
+    public void RecordStarsUsed()
     {
         CustomEvent adImpression = new CustomEvent("Spent_Stars")
         {
-            {"SpentStarts", startsSpent},
+            {"SpentStarts", "TestSpentStars"},
         };
 
         AnalyticsService.Instance.RecordEvent(adImpression);
 
-        Debug.Log("Analytics: Spent_Stars " + startsSpent);
+        Debug.Log("Analytics: Spent_Stars");
     }
 
     public void RecordCrashes()

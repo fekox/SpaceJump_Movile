@@ -152,7 +152,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    analyticsTraker.RecordStarsUsed(priceSkins);
+                    analyticsTraker.RecordStarsUsed();
                     buySystem.BuyPinkMan();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -169,7 +169,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    analyticsTraker.RecordStarsUsed(priceSkins);
+                    analyticsTraker.RecordStarsUsed();
                     buySystem.BuyNinjaFrog();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -186,7 +186,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
-                    analyticsTraker.RecordStarsUsed(priceSkins);
+                    analyticsTraker.RecordStarsUsed();
                     buySystem.BuyMaskDude();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -203,7 +203,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
-                    analyticsTraker.RecordStarsUsed(priceSkins);
+                    analyticsTraker.RecordStarsUsed();
                     buySystem.BuyX2PowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -220,7 +220,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
-                    analyticsTraker.RecordStarsUsed(priceSkins);
+                    analyticsTraker.RecordStarsUsed();
                     buySystem.BuyPlusFiftyMeterPowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
