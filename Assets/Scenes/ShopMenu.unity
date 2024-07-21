@@ -2400,6 +2400,7 @@ GameObject:
   - component: {fileID: 775889364}
   - component: {fileID: 775889363}
   - component: {fileID: 775889365}
+  - component: {fileID: 775889366}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2523,6 +2524,7 @@ MonoBehaviour:
   adPopup: {fileID: 228453378}
   rewardedAdManager: {fileID: 775889365}
   buySystem: {fileID: 1817773129}
+  analyticsTraker: {fileID: 775889366}
   buttonData: {fileID: 11400000, guid: f5551e163ac70f2499d0f49c4baea064, type: 2}
   disableIntems:
   - {fileID: 718564864}
@@ -2581,6 +2583,18 @@ MonoBehaviour:
   buttonSprite: {fileID: 433614976}
   text: {fileID: 1877370877}
   rewardedAdButton: {fileID: 1591588917}
+--- !u!114 &775889366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775889356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e986dec4eefa7f4ebacbde88855ba9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813063862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,6 +5171,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 775889366}
+        m_TargetAssemblyTypeName: AnalyticsTraker, Assembly-CSharp
+        m_MethodName: RecordRewardedAdImpression
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1591588918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6598,6 +6624,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 775889366}
+        m_TargetAssemblyTypeName: AnalyticsTraker, Assembly-CSharp
+        m_MethodName: RecordRewardedAdImpression
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 775889362}
         m_TargetAssemblyTypeName: ShopMenuButtons, Assembly-CSharp
         m_MethodName: GetRewarded

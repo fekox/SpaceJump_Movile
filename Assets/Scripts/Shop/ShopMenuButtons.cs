@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -25,6 +26,8 @@ public class ShopMenuButtons : MonoBehaviour
     [Header("Shop System")]
     [SerializeField] private BuySystem buySystem;
 
+    [Header("Analitycs")]
+    [SerializeField] private AnalyticsTraker analyticsTraker;
 
     [Header("Button Data")]
     [SerializeField] private ButtonData buttonData;
@@ -149,6 +152,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
+                    analyticsTraker.RecordStarsUsed(priceSkins);
                     buySystem.BuyPinkMan();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -165,6 +169,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
+                    analyticsTraker.RecordStarsUsed(priceSkins);
                     buySystem.BuyNinjaFrog();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -181,6 +186,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(priceSkins))
                 {
                     starsCounterManager.RemoveStars(priceSkins);
+                    analyticsTraker.RecordStarsUsed(priceSkins);
                     buySystem.BuyMaskDude();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -197,6 +203,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
+                    analyticsTraker.RecordStarsUsed(priceSkins);
                     buySystem.BuyX2PowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);
@@ -213,6 +220,7 @@ public class ShopMenuButtons : MonoBehaviour
                 if (CheckIfCanBuy(pricePowerUp))
                 {
                     starsCounterManager.RemoveStars(pricePowerUp);
+                    analyticsTraker.RecordStarsUsed(priceSkins);
                     buySystem.BuyPlusFiftyMeterPowerUp();
                     popUp.SetActive(false);
                     menuButton.SetActive(true);

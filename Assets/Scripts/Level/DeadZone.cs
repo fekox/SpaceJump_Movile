@@ -12,6 +12,7 @@ public class DeadZone : MonoBehaviour
     [SerializeField] private LoadLevel loadLevel;
     [SerializeField] private StarsCounterManager starsCounterManager;
     [SerializeField] private InterstitialAd interstitialAd;
+    [SerializeField] private AnalyticsTraker analyticsTraker;
 
     private bool isAdLoad = false;
     private void Update()
@@ -27,6 +28,7 @@ public class DeadZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTagName))
         {
+            analyticsTraker.RecordInterstitialAdImpression();
             VibrateCellPhone();
             interstitialAd.ShowAd();
             isAdLoad = false;
